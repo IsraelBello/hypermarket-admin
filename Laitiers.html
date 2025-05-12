@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produits Laitiers - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titre catégorie -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Produits Laitiers</h2>
+      <p class="text-center mb-5">Découvrez nos produits laitiers frais et savoureux pour toute la famille.</p>
+      <div class="row g-4">
+
+        <!-- Produit Laitier 1 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier1.jpg" class="card-img-top" alt="Lait entier">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait entier</h5>
+        <p class="card-text">Frais, riche en calcium et vitamines.</p>
+        <p class="text-success fw-bold">800 FCFA / litre</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait entier', 800, 'Images/Laitier1.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 2 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier2.jpg" class="card-img-top" alt="Lait demi-écrémé">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait demi-écrémé</h5>
+        <p class="card-text">Léger et adapté à toute la famille.</p>
+        <p class="text-success fw-bold">750 FCFA / litre</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait demi-écrémé', 750, 'Images/Laitier2.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 3 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier3.jpg" class="card-img-top" alt="Lait écrémé">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait écrémé</h5>
+        <p class="card-text">Sans matières grasses, pour une alimentation saine.</p>
+        <p class="text-success fw-bold">700 FCFA / litre</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait écrémé', 700, 'Images/Laitier3.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 4 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier4.jpg" class="card-img-top" alt="Yaourt nature">
+      <div class="card-body text-center">
+        <h5 class="card-title">Yaourt nature</h5>
+        <p class="card-text">Onctueux et sans sucre ajouté.</p>
+        <p class="text-success fw-bold">500 FCFA / pot</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Yaourt nature', 500, 'Images/Laitier4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 5 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier5.jpg" class="card-img-top" alt="Yaourt aux fruits">
+      <div class="card-body text-center">
+        <h5 class="card-title">Yaourt aux fruits</h5>
+        <p class="card-text">Délicieux mélange de fruits frais.</p>
+        <p class="text-success fw-bold">550 FCFA / pot</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Yaourt aux fruits', 550, 'Images/Laitier5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 6 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier6.jpg" class="card-img-top" alt="Beurre doux">
+      <div class="card-body text-center">
+        <h5 class="card-title">Beurre doux</h5>
+        <p class="card-text">Crémeux, parfait pour vos tartines.</p>
+        <p class="text-success fw-bold">1 200 FCFA / 250g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Beurre doux', 1200, 'Images/Laitier6.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 7 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier7.jpg" class="card-img-top" alt="Beurre salé">
+      <div class="card-body text-center">
+        <h5 class="card-title">Caramel au beurre salé</h5>
+        <p class="card-text">Parfait pour vos recettes salées.</p>
+        <p class="text-success fw-bold">1 250 FCFA / 250g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Beurre salé', 1250, 'Images/Laitier7.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 8 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier8.jpg" class="card-img-top" alt="Fromage camembert">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fromage camembert</h5>
+        <p class="card-text">Fondant et délicatement affiné.</p>
+        <p class="text-success fw-bold">2 000 FCFA / 250g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fromage camembert', 2000, 'Images/Laitier8.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 9 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier9.jpg" class="card-img-top" alt="Fromage gouda">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fromage gouda</h5>
+        <p class="card-text">Douceur et goût subtil.</p>
+        <p class="text-success fw-bold">1 800 FCFA / 200g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fromage gouda', 1800, 'Images/Laitier9.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 10 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier10.jpg" class="card-img-top" alt="Fromage mozzarella">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fromage mozzarella</h5>
+        <p class="card-text">Idéal pour vos pizzas maison.</p>
+        <p class="text-success fw-bold">1 500 FCFA / 250g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fromage mozzarella', 1500, 'Images/Laitier10.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 11 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier11.jpg" class="card-img-top" alt="Crème fraîche">
+      <div class="card-body text-center">
+        <h5 class="card-title">Crème fraîche</h5>
+        <p class="card-text">Épaisse et parfaite pour la cuisine.</p>
+        <p class="text-success fw-bold">1 000 FCFA / pot</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Crème fraîche', 1000, 'Images/Laitier11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 12 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier12.jpg" class="card-img-top" alt="Petit suisse">
+      <div class="card-body text-center">
+        <h5 class="card-title">Petit suisse</h5>
+        <p class="card-text">Douceur laitière pour les petits et grands.</p>
+        <p class="text-success fw-bold">600 FCFA / pot</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Petit suisse', 600, 'Images/Laitier12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 13 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier13.jpg" class="card-img-top" alt="Fromage frais">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fromage frais</h5>
+        <p class="card-text">Délicieusement tartinable.</p>
+        <p class="text-success fw-bold">900 FCFA / 150g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fromage frais', 900, 'Images/Laitier13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit Laitier 14 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier14.jpg" class="card-img-top" alt="Fromage râpé">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fromage râpé</h5>
+        <p class="card-text">Mélange spécial pour gratins et pizzas.</p>
+        <p class="text-success fw-bold">1 300 FCFA / sachet</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fromage râpé', 1300, 'Images/Laitier14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 15 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier15.jpg" class="card-img-top" alt="Lait fermenté">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait fermenté</h5>
+        <p class="card-text">Traditionnel, riche en probiotiques naturels.</p>
+        <p class="text-success fw-bold">650 FCFA / bouteille</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait fermenté', 650, 'Images/Laitier15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 16 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier16.jpg" class="card-img-top" alt="Kéfir">
+      <div class="card-body text-center">
+        <h5 class="card-title">Kéfir</h5>
+        <p class="card-text">Boisson santé au goût légèrement acidulé.</p>
+        <p class="text-success fw-bold">700 FCFA / bouteille</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Kéfir', 700, 'Images/Laitier16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 17 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier17.jpg" class="card-img-top" alt="Lait chocolaté">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait chocolaté</h5>
+        <p class="card-text">Gourmandise lactée pour petits et grands.</p>
+        <p class="text-success fw-bold">900 FCFA / bouteille</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait chocolaté', 900, 'Images/Laitier17.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 18 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier18.jpg" class="card-img-top" alt="Crème chantilly">
+      <div class="card-body text-center">
+        <h5 class="card-title">Crème chantilly</h5>
+        <p class="card-text">Légère et sucrée pour desserts et gâteaux.</p>
+        <p class="text-success fw-bold">1 500 FCFA / bombe</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Crème chantilly', 1500, 'Images/Laitier18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 19 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier19.jpg" class="card-img-top" alt="Crème anglaise">
+      <div class="card-body text-center">
+        <h5 class="card-title">Crème anglaise</h5>
+        <p class="card-text">Délicate pour accompagner vos desserts.</p>
+        <p class="text-success fw-bold">1 200 FCFA / bouteille</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Crème anglaise', 1200, 'Images/Laitier19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 20 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier20.jpg" class="card-img-top" alt="Fromage bleu">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fromage bleu</h5>
+        <p class="card-text">Affiné, idéal pour les amateurs de caractère.</p>
+        <p class="text-success fw-bold">2 500 FCFA / 200g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fromage bleu', 2500, 'Images/Laitier20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 21 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier21.jpg" class="card-img-top" alt="Lait de chèvre">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait de chèvre</h5>
+        <p class="card-text">Alternative douce et digeste au lait de vache.</p>
+        <p class="text-success fw-bold">1 200 FCFA / litre</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait de chèvre', 1200, 'Images/Laitier21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 22 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier22.jpg" class="card-img-top" alt="Lait de brebis">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait de brebis</h5>
+        <p class="card-text">Crémeux et riche en saveurs.</p>
+        <p class="text-success fw-bold">1 300 FCFA / litre</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait de brebis', 1300, 'Images/Laitier22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 23 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier23.jpg" class="card-img-top" alt="Yaourt grec">
+      <div class="card-body text-center">
+        <h5 class="card-title">Yaourt grec</h5>
+        <p class="card-text">Épais et crémeux, riche en protéines.</p>
+        <p class="text-success fw-bold">800 FCFA / pot</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Yaourt grec', 800, 'Images/Laitier23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 24 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier24.jpg" class="card-img-top" alt="Lait concentré sucré">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait concentré sucré</h5>
+        <p class="card-text">Idéal pour les desserts maison.</p>
+        <p class="text-success fw-bold">1 000 FCFA / boîte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait concentré sucré', 1000, 'Images/Laitier24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Laitier 25 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Laitier25.jpg" class="card-img-top" alt="Lait concentré non sucré">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lait concentré non sucré</h5>
+        <p class="card-text">Pratique pour vos préparations culinaires.</p>
+        <p class="text-success fw-bold">950 FCFA / boîte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lait concentré non sucré', 950, 'Images/Laitier25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+</div>
+
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+<div class="container text-center">
+  <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+</div>
+</footer>
+
+<!-- Script panier -->
+<script>
+function ajouterAuPanier(nom, prix, image) {
+  let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+  const index = panier.findIndex(p => p.nom === nom);
+  if (index !== -1) {
+    panier[index].quantite += 1;
+  } else {
+    panier.push({ nom, prix, image, quantite: 1 });
+  }
+
+  localStorage.setItem("panier", JSON.stringify(panier));
+  alert(`${nom} ajouté au panier !`);
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>

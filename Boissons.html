@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boissons - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Titre catégorie -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center text-success mb-4 fw-bold">Nos Boissons</h2>
+    <p class="text-center mb-5">Découvrez notre sélection de boissons sucrées, incluant des options alcoolisées et non alcoolisées, pour tous les goûts.</p>
+    <div class="row g-4">
+
+      <!-- Produit Boisson 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson1.jpeg" class="card-img-top" alt="Sodabi">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sodabi</h5>
+            <p class="card-text">Alcool local béninois distillé à partir du vin de palme, fort et aromatique.</p>
+            <p class="text-success fw-bold">1 200 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Sodabi', 1200, 'Images/Boisson1.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson2.jpg" class="card-img-top" alt="Soda Cola">
+          <div class="card-body text-center">
+            <h5 class="card-title">Soda Cola</h5>
+            <p class="card-text">Boisson gazeuse rafraîchissante au goût unique.</p>
+            <p class="text-success fw-bold">500 FCFA / 330ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Soda Cola', 500, 'Images/Boisson2.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson3.jpg" class="card-img-top" alt="Jus d'orange">
+          <div class="card-body text-center">
+            <h5 class="card-title">Jus d'orange</h5>
+            <p class="card-text">Pur jus vitaminé, sans sucre ajouté.</p>
+            <p class="text-success fw-bold">700 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Jus d\'orange', 700, 'Images/Boisson3.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson4.jpg" class="card-img-top" alt="Jus de Bissap">
+          <div class="card-body text-center">
+            <h5 class="card-title">Jus de Bissap</h5>
+            <p class="card-text">Infusion sucrée d'hibiscus, rafraîchissante et riche en antioxydants.</p>
+            <p class="text-success fw-bold">600 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Jus de Bissap', 600, 'Images/Boisson4.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson5.jpg" class="card-img-top" alt="Tchapalo">
+          <div class="card-body text-center">
+            <h5 class="card-title">Tchapalo</h5>
+            <p class="card-text">Bière traditionnelle à base de mil, légèrement sucrée et fermentée.</p>
+            <p class="text-success fw-bold">800 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Tchapalo', 800, 'Images/Boisson5.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson6.jpg" class="card-img-top" alt="Jus de Gingembre">
+          <div class="card-body text-center">
+            <h5 class="card-title">Jus de Gingembre</h5>
+            <p class="card-text">Boisson piquante et sucrée à base de gingembre frais, énergisante.</p>
+            <p class="text-success fw-bold">600 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Jus de Gingembre', 600, 'Images/Boisson6.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 7 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson7.jpg" class="card-img-top" alt="Youki Pamplemousse">
+          <div class="card-body text-center">
+            <h5 class="card-title">Pépi de Pamplemousse</h5>
+            <p class="card-text">Soda rafraîchissant au goût acidulé de pamplemousse.</p>
+            <p class="text-success fw-bold">500 FCFA / 330ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Youki Pamplemousse', 500, 'Images/Boisson7.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 8 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson8.jpg" class="card-img-top" alt="Vin de palme">
+          <div class="card-body text-center">
+            <h5 class="card-title">Vin de palme</h5>
+            <p class="card-text">Boisson traditionnelle sucrée obtenue par fermentation de sève de palmier.</p>
+            <p class="text-success fw-bold">1 000 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Vin de palme', 1000, 'Images/Boisson8.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 9 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson9.jpg" class="card-img-top" alt="Coca-Cola">
+          <div class="card-body text-center">
+            <h5 class="card-title">Coca-Cola</h5>
+            <p class="card-text">Boisson gazeuse sucrée emblématique, appréciée dans le monde entier.</p>
+            <p class="text-success fw-bold">500 FCFA / 330ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Coca-Cola', 500, 'Images/Boisson9.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 10 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson10.jpg" class="card-img-top" alt="Vin de café">
+          <div class="card-body text-center">
+            <h5 class="card-title">Vin de café</h5>
+            <p class="card-text">Vin doux infusé au café, offrant une saveur unique et sucrée.</p>
+            <p class="text-success fw-bold">2 000 FCFA / 750ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Vin de café', 2000, 'Images/Boisson10.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+            <!-- Produit Boisson 11 -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson11.jpg" class="card-img-top" alt="Jus de baobab">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Jus de baobab</h5>
+                    <p class="card-text">Boisson douce et riche en nutriments, issue du fruit du baobab.</p>
+                    <p class="text-success fw-bold">600 FCFA / 500ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Jus de baobab', 600, 'Images/Boisson11.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 12 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson12.jpg" class="card-img-top" alt="Fanta Orange">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Fanta Orange</h5>
+                    <p class="card-text">Boisson gazeuse fruitée, très populaire chez les jeunes.</p>
+                    <p class="text-success fw-bold">500 FCFA / 330ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Fanta Orange', 500, 'Images/Boisson12.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 13 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson13.jpg" class="card-img-top" alt="Jus de tamarin">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Jus de tamarin</h5>
+                    <p class="card-text">Boisson sucrée à base de pulpe de tamarin, goût acidulé.</p>
+                    <p class="text-success fw-bold">600 FCFA / 500ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Jus de tamarin', 600, 'Images/Boisson13.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 14 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson14.jpg" class="card-img-top" alt="Youki Ananas">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Youki Ananas</h5>
+                    <p class="card-text">Soda sucré au parfum d’ananas, rafraîchissant et fruité.</p>
+                    <p class="text-success fw-bold">500 FCFA / 330ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Youki Ananas', 500, 'Images/Boisson14.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 15 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson15.jpg" class="card-img-top" alt="Thé glacé local">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Thé glacé local</h5>
+                    <p class="card-text">Boisson sucrée à base de feuilles de thé du terroir béninois.</p>
+                    <p class="text-success fw-bold">700 FCFA / 500ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Thé glacé local', 700, 'Images/Boisson15.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 16 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson16.jpg" class="card-img-top" alt="Vin de banane">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Vin de banane</h5>
+                    <p class="card-text">Vin sucré à base de banane fermentée, original et doux.</p>
+                    <p class="text-success fw-bold">1 800 FCFA / 750ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Vin de banane', 1800, 'Images/Boisson16.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 17 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson17.jpg" class="card-img-top" alt="Jus de goyave">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Jus de goyave</h5>
+                    <p class="card-text">Boisson naturellement sucrée, riche en vitamine C.</p>
+                    <p class="text-success fw-bold">600 FCFA / 500ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Jus de goyave', 600, 'Images/Boisson17.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Produit Boisson 18 -->
+              <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                  <img src="Images/Boisson18.jpg" class="card-img-top" alt="Jus de citron vert">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Jus de citron vert</h5>
+                    <p class="card-text">Boisson acidulée, sucrée naturellement, très désaltérante.</p>
+                    <p class="text-success fw-bold">500 FCFA / 500ml</p>
+                    <button class="btn btn-success" onclick="ajouterAuPanier('Jus de citron vert', 500, 'Images/Boisson18.jpg')">Ajouter au panier</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Produit Boisson 19 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson19.jpg" class="card-img-top" alt="Jus de papaye">
+          <div class="card-body text-center">
+            <h5 class="card-title">Jus de papaye</h5>
+            <p class="card-text">Délicieux jus tropical riche en antioxydants et en vitamines.</p>
+            <p class="text-success fw-bold">600 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Jus de papaye', 600, 'Images/Boisson19.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 20 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson20.jpg" class="card-img-top" alt="Limonade maison">
+          <div class="card-body text-center">
+            <h5 class="card-title">Limonade maison</h5>
+            <p class="card-text">Boisson rafraîchissante à base de citron, sucre et eau gazeuse.</p>
+            <p class="text-success fw-bold">500 FCFA / 330ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Limonade maison', 500, 'Images/Boisson20.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 21 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson21.jpg" class="card-img-top" alt="Boisson maltée">
+          <div class="card-body text-center">
+            <h5 class="card-title">Boisson maltée</h5>
+            <p class="card-text">Saveur malt douce et agréable, très appréciée à tout âge.</p>
+            <p class="text-success fw-bold">700 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Boisson maltée', 700, 'Images/Boisson21.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit Boisson 22 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Boisson22.jpg" class="card-img-top" alt="Jus mix tropical">
+          <div class="card-body text-center">
+            <h5 class="card-title">Jus mix tropical</h5>
+            <p class="card-text">Cocktail fruité de mangue, ananas et fruit de la passion.</p>
+            <p class="text-success fw-bold">800 FCFA / 500ml</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Jus mix tropical', 800, 'Images/Boisson22.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+</div>
+
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+<div class="container text-center">
+  <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+</div>
+</footer>
+
+<!-- Script panier -->
+<script>
+function ajouterAuPanier(nom, prix, image) {
+  let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+  const index = panier.findIndex(p => p.nom === nom);
+  if (index !== -1) {
+    panier[index].quantite += 1;
+  } else {
+    panier.push({ nom, prix, image, quantite: 1 });
+  }
+
+  localStorage.setItem("panier", JSON.stringify(panier));
+  alert(`${nom} ajouté au panier !`);
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>
+    

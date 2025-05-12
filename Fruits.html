@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fruits - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titre catégorie -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Fruits</h2>
+      <p class="text-center mb-5">Découvrez nos fruits qui vous donne de la Vitamine.</p>
+      <div class="row g-4">
+
+        <!-- Produit fruit 1 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit1.jpg" class="card-img-top" alt="Pommes rouges">
+            <div class="card-body text-center">
+              <h5 class="card-title">Pommes Rouges</h5>
+              <p class="card-text">Délicieuses et croquantes, riches en vitamines.</p>
+              <p class="text-success fw-bold">1000 FCFA / kg</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Pommes Rouges', 1000, 'Images/Fruit1.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 2 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit2.jpg" class="card-img-top" alt="Bananes">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bananes Douces</h5>
+              <p class="card-text">Idéales pour vos goûters et smoothies.</p>
+              <p class="text-success fw-bold">1 500 FCFA / kg</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bananes Douces', 1500, 'Images/Fruit2.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 3 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit3.jpg" class="card-img-top" alt="Mangues">
+            <div class="card-body text-center">
+              <h5 class="card-title">Mangues Kent</h5>
+              <p class="card-text">Juteuses et sucrées, parfaites pour dessert.</p>
+              <p class="text-success fw-bold">200 FCFA / kg</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Mangues Kent', 200, 'Images/Fruit3.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 4 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit4.jpg" class="card-img-top" alt="Ananas">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ananas Sucrés</h5>
+              <p class="card-text">Cultivés localement, goût tropical garanti.</p>
+              <p class="text-success fw-bold">300 FCFA / pièce</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Ananas Sucrés', 300, 'Images/Fruit4.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 5 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit5.jpg" class="card-img-top" alt="Oranges">
+            <div class="card-body text-center">
+              <h5 class="card-title">Oranges Juteuses</h5>
+              <p class="card-text">Excellentes pour jus frais et vitamines.</p>
+              <p class="text-success fw-bold">2 500 FCFA / kg</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Oranges Juteuses', 2500, 'Images/Fruit5.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 6 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit6.jpg" class="card-img-top" alt="Raisins">
+            <div class="card-body text-center">
+              <h5 class="card-title">Raisins Noirs</h5>
+              <p class="card-text">Sans pépins, parfaits à grignoter.</p>
+              <p class="text-success fw-bold">3 500 FCFA / kg</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Raisins Noirs', 3500, 'Images/Fruit6.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 7 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit7.jpg" class="card-img-top" alt="Pastèque">
+            <div class="card-body text-center">
+              <h5 class="card-title">Pastèque Fraîche</h5>
+              <p class="card-text">Rafraîchissante et désaltérante.</p>
+              <p class="text-success fw-bold">2 000 FCFA / pièce</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Pastèque Fraîche', 2000, 'Images/Fruit7.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 8 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit8.jpg" class="card-img-top" alt="Papaye">
+            <div class="card-body text-center">
+              <h5 class="card-title">Papaye Mûre</h5>
+              <p class="card-text">Riche en fibres, douce au palais.</p>
+              <p class="text-success fw-bold">300 FCFA / pièce</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Papaye Mûre', 300, 'Images/Fruit8.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 9 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit9.jpg" class="card-img-top" alt="Fraises">
+            <div class="card-body text-center">
+              <h5 class="card-title">Fraises Fraîches</h5>
+              <p class="card-text">Parfaites pour dessert et confiture.</p>
+              <p class="text-success fw-bold">4 000 FCFA / barquette</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Fraises Fraîches', 4000, 'Images/Fruit9.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 10 -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Fruit10.jpg" class="card-img-top" alt="Avocats">
+            <div class="card-body text-center">
+              <h5 class="card-title">Avocats Naturels</h5>
+              <p class="card-text">Onctueux et sains, bons pour le cœur.</p>
+              <p class="text-success fw-bold">2 000 FCFA / kg</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Avocats Naturels', 2000, 'Images/Fruit10.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produit fruit 11 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit11.jpg" class="card-img-top" alt="Papaye">
+      <div class="card-body text-center">
+        <h5 class="card-title">Papaye</h5>
+        <p class="card-text">Fruit tropical sucré et juteux, riche en enzymes.</p>
+        <p class="text-success fw-bold">900 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Papaye', 900, 'Images/Fruit11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 12 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit12.jpg" class="card-img-top" alt="Fruit de la passion">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fruit de la passion</h5>
+        <p class="card-text">Fruit exotique au goût acidulé et intense.</p>
+        <p class="text-success fw-bold">1200 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fruit de la passion', 1200, 'Images/Fruit12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 13 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit13.jpg" class="card-img-top" alt="Litchi">
+      <div class="card-body text-center">
+        <h5 class="card-title">Litchi</h5>
+        <p class="card-text">Fruit asiatique sucré et juteux avec une peau rugueuse.</p>
+        <p class="text-success fw-bold">1300 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Litchi', 1300, 'Images/Fruit13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 14 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit14.jpg" class="card-img-top" alt="Abricot">
+      <div class="card-body text-center">
+        <h5 class="card-title">Abricot</h5>
+        <p class="card-text">Petit fruit orangé doux et légèrement acidulé.</p>
+        <p class="text-success fw-bold">1100 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Abricot', 1100, 'Images/Fruit14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 15 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit15.jpg" class="card-img-top" alt="Figue">
+      <div class="card-body text-center">
+        <h5 class="card-title">Figue</h5>
+        <p class="card-text">Fruit sucré et fibreux, souvent utilisé sec ou frais.</p>
+        <p class="text-success fw-bold">1400 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Figue', 1400, 'Images/Fruit15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 16 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit16.jpg" class="card-img-top" alt="Clémentine">
+      <div class="card-body text-center">
+        <h5 class="card-title">Clémentine</h5>
+        <p class="card-text">Agrume doux, facile à éplucher, sans pépins.</p>
+        <p class="text-success fw-bold">800 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Clémentine', 800, 'Images/Fruit16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 17 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit17.jpg" class="card-img-top" alt="Goyave">
+      <div class="card-body text-center">
+        <h5 class="card-title">Goyave</h5>
+        <p class="card-text">Fruit tropical riche en vitamine C et en fibres.</p>
+        <p class="text-success fw-bold">1000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Goyave', 1000, 'Images/Fruit17.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 18 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit18.jpg" class="card-img-top" alt="Mandarine">
+      <div class="card-body text-center">
+        <h5 class="card-title">Mandarine</h5>
+        <p class="card-text">Agrume au goût sucré et acidulé, parfait pour l’hiver.</p>
+        <p class="text-success fw-bold">750 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Mandarine', 750, 'Images/Fruit18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 19 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit19.jpg" class="card-img-top" alt="Kaki">
+      <div class="card-body text-center">
+        <h5 class="card-title">Kaki</h5>
+        <p class="card-text">Fruit doux et charnu, à déguster bien mûr.</p>
+        <p class="text-success fw-bold">1100 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Kaki', 1100, 'Images/Fruit19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 20 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit20.jpg" class="card-img-top" alt="Mangoustan">
+      <div class="card-body text-center">
+        <h5 class="card-title">Mangoustan</h5>
+        <p class="card-text">Fruit tropical au goût doux et légèrement acidulé.</p>
+        <p class="text-success fw-bold">1500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Mangoustan', 1500, 'Images/Fruit20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 21 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit21.jpg" class="card-img-top" alt="Datte">
+      <div class="card-body text-center">
+        <h5 class="card-title">Datte</h5>
+        <p class="card-text">Fruit sec naturellement sucré et énergétique.</p>
+        <p class="text-success fw-bold">900 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Datte', 900, 'Images/Fruit21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 22 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit22.jpg" class="card-img-top" alt="Nashi">
+      <div class="card-body text-center">
+        <h5 class="card-title">Nashi</h5>
+        <p class="card-text">Poire asiatique croquante, juteuse et rafraîchissante.</p>
+        <p class="text-success fw-bold">1300 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Nashi', 1300, 'Images/Fruit22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 23 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit23.jpg" class="card-img-top" alt="Pomelo">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pomelo</h5>
+        <p class="card-text">Gros agrume à la chair rose ou jaune, rafraîchissant.</p>
+        <p class="text-success fw-bold">950 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pomelo', 950, 'Images/Fruit23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 24 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit24.jpg" class="card-img-top" alt="Grenade">
+      <div class="card-body text-center">
+        <h5 class="card-title">Grenade</h5>
+        <p class="card-text">Fruit riche en antioxydants, plein de grains juteux.</p>
+        <p class="text-success fw-bold">1200 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Grenade', 1200, 'Images/Fruit24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit fruit 25 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Fruit25.jpg" class="card-img-top" alt="Nectarine">
+      <div class="card-body text-center">
+        <h5 class="card-title">Nectarine</h5>
+        <p class="card-text">Fruit proche de la pêche, sans duvet, sucré et juteux.</p>
+        <p class="text-success fw-bold">850 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Nectarine', 850, 'Images/Fruit25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Footer simple -->
+ <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script panier -->
+  <script>
+    function ajouterAuPanier(nom, prix, image) {
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      const index = panier.findIndex(p => p.nom === nom);
+      if (index !== -1) {
+        panier[index].quantite += 1;
+      } else {
+        panier.push({ nom, prix, image, quantite: 1 });
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert(`${nom} ajouté au panier !`);
+    }
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="essaie.js"></script>    
+</body>
+</html>
+

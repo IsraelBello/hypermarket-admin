@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande - Résumé et Facture</title>
+    <link rel="stylesheet" href="stylec.css">
+</head>
+<body>
+
+    <header>
+        <h1>Résumé de la Commande</h1>
+    </header>
+
+    <section id="commande">
+        <h2>Produits Commandés</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Produit</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="tableau-commande">
+                <!-- Les produits commandés seront insérés ici via JavaScript -->
+            </tbody>
+        </table>
+
+        <h3>Total Commande: <span id="total-commande">0</span> F CFA</h3>
+
+        <div>
+            <label for="livraison">Livraison à domicile :</label>
+            <input type="checkbox" id="livraison" name="livraison">
+        </div>
+
+        <div id="formulaire-livraison" style="display: none;">
+            <h3>Information sur le livreur</h3>
+            <form id="livraison-form">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" required><br>
+
+                <label for="nom">Prenom :</label>
+                <input type="text" id="Prenom" required><br>
+
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" required><br>
+
+                <label for="ville">Quartier de Ville :</label>
+                <input type="text" id="ville" required><br>
+
+                <label for="telephone">Numero du livreur :</label>
+                <input type="text" id="telephone" required><br>
+
+                <button type="submit">Confirmer Livraison</button>
+            </form>
+        </div>
+
+        <button id="generer-facture">Générer la Facture PDF</button>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Exemple de produits commandés
+        const produits = JSON.parse(localStorage.getItem("panier")) || [];
+
+        // Afficher les produits commandés dans le tableau
+        const tableauCommande = document.getElementById('tableau-commande');
+        let totalCommande = 0;
+
+        produits.forEach(produit => {
+            const totalProduit = produit.quantite * produit.prix;
+            totalCommande += totalProduit;
+
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${produit.nom}</td>
+                <td>${produit.quantite}</td>
+                <td>${produit.prix} F CFA</td>
+                <td>${totalProduit} F CFA</td>
+            `;
+            tableauCommande.appendChild(row);
+        });
+
+        // Afficher le total de la commande
+        document.getElementById('total-commande').innerText = totalCommande;
+
+        // Afficher le formulaire de livraison si l'option est sélectionnée
+        document.getElementById('livraison').addEventListener('change', function() {
+            const formulaireLivraison = document.getElementById('formulaire-livraison');
+            if (this.checked) {
+                formulaireLivraison.style.display = 'block';
+            } else {
+                formulaireLivraison.style.display = 'none';
+            }
+        });
+
+        // Générer la facture PDF
+        document.getElementById('generer-facture').addEventListener('click', function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            localStorage.removeItem("panier");
+
+
+            // Ajout du titre
+            doc.setFontSize(16);
+            doc.text("Facture de Commande", 20, 20);
+
+            // Liste des produits commandés
+            let y = 30;
+            produits.forEach(produit => {
+                doc.setFontSize(12);
+                doc.text(`${produit.nom} - ${produit.quantite} x ${produit.prix} F CFA = ${produit.quantite * produit.prix} F CFA`, 20, y);
+                y += 10;
+            });
+
+            // Affichage du total
+            doc.setFontSize(14);
+            doc.text(`Total de la commande: ${totalCommande} F CFA`, 20, y);
+
+            // Si livraison à domicile, ajouter les informations
+            if (document.getElementById('livraison').checked) {
+                const nom = document.getElementById('nom').value;
+                const adresse = document.getElementById('adresse').value;
+                const ville = document.getElementById('ville').value;
+                const telephone = document.getElementById('telephone').value;
+
+                y += 20;
+                doc.text("Livraison à domicile:", 20, y);
+                y += 10;
+                doc.text(`Nom: ${nom}`, 20, y);
+                y += 10;
+                doc.text(`Adresse: ${adresse}, ${ville}`, 20, y);
+                y += 10;
+                doc.text(`Téléphone: ${telephone}`, 20, y);
+            }
+
+            // Télécharger le PDF
+            doc.save('facture.pdf');
+        });
+    </script>
+
+</body>
+</html>

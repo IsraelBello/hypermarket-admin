@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessoires - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Titre catégorie -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Accessoires</h2>
+      <p class="text-center mb-5">Complétez votre style avec nos accessoires tendance.</p>
+      <div class="row g-4">
+  
+        <!-- Montres -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire1.jpg" class="card-img-top" alt="Montre Élégante">
+            <div class="card-body text-center">
+              <h5 class="card-title">Montre Élégante</h5>
+              <p class="card-text">Parfaite pour vos tenues habillées.</p>
+              <p class="text-success fw-bold">15 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Montre Élégante', 15000, 'Images/Accessoire1.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire2.jpg" class="card-img-top" alt="Montre Sport">
+            <div class="card-body text-center">
+              <h5 class="card-title">Montre Sport</h5>
+              <p class="card-text">Idéale pour un look décontracté.</p>
+              <p class="text-success fw-bold">12 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Montre Sport', 12000, 'Images/Accessoire2.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire3.jpg" class="card-img-top" alt="Montre Classique">
+            <div class="card-body text-center">
+              <h5 class="card-title">Montre Classique</h5>
+              <p class="card-text">Un style intemporel pour tous les jours.</p>
+              <p class="text-success fw-bold">10 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Montre Classique', 10000, 'Images/Accessoire3.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Bracelets -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire4.jpg" class="card-img-top" alt="Bracelet Cuir">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bracelet en Cuir</h5>
+              <p class="card-text">Ajoute une touche chic à votre poignet.</p>
+              <p class="text-success fw-bold">6 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bracelet en Cuir', 6000, 'Images/Accessoire4.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire5.jpg" class="card-img-top" alt="Bracelet Perle">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bracelet en Perles</h5>
+              <p class="card-text">Élégance et douceur réunies.</p>
+              <p class="text-success fw-bold">7 500 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bracelet en Perles', 7500, 'Images/Accessoire5.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire6.jpg" class="card-img-top" alt="Bracelet Fantaisie">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bracelet Magnétique</h5>
+              <p class="card-text">Idéal pour une sortie spéciale.</p>
+              <p class="text-success fw-bold">13 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bracelet Fantaisie', 13000, 'Images/Accessoire6.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Bagues -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire7.jpg" class="card-img-top" alt="Bague Or">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bague en Or</h5>
+              <p class="card-text">Symbole d’amour éternel.</p>
+              <p class="text-success fw-bold">25 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bague en Or', 25000, 'Images/Accessoire7.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire8.jpg" class="card-img-top" alt="Bague Argent">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bague en Argent</h5>
+              <p class="card-text">Brillance discrète pour votre doigt.</p>
+              <p class="text-success fw-bold">18 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bague en Argent', 18000, 'Images/Accessoire8.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire9.jpg" class="card-img-top" alt="Bague Fantaisie">
+            <div class="card-body text-center">
+              <h5 class="card-title">Bague Fantaisie</h5>
+              <p class="card-text">Ajoutez du pep’s à vos mains.</p>
+              <p class="text-success fw-bold">10 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Bague Fantaisie', 10000, 'Images/Accessoire9.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Ceintures -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire10.jpg" class="card-img-top" alt="Ceinture Cuir">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ceinture en Cuir</h5>
+              <p class="card-text">Indispensable pour un look classe.</p>
+              <p class="text-success fw-bold">8 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Ceinture en Cuir', 8000, 'Images/Accessoire10.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire11.jpg" class="card-img-top" alt="Ceinture Tissu">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ceinture en Tissu</h5>
+              <p class="card-text">Parfait pour un style casual.</p>
+              <p class="text-success fw-bold">5 500 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Ceinture en Tissu', 5500, 'Images/Accessoire11.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire12.jpg" class="card-img-top" alt="Ceinture Tendance">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ceinture Tendance</h5>
+              <p class="card-text">Accessoire à la mode et fonctionnel.</p>
+              <p class="text-success fw-bold">9 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Ceinture Tendance', 9000, 'Images/Accessoire12.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Lunettes -->
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire13.jpg" class="card-img-top" alt="Lunettes de Soleil">
+            <div class="card-body text-center">
+              <h5 class="card-title">Lunettes de Soleil</h5>
+              <p class="card-text">Protégez vos yeux avec style.</p>
+              <p class="text-success fw-bold">12 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Lunettes de Soleil', 12000, 'Images/Accessoire13.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire14.jpg" class="card-img-top" alt="Lunettes Vintage">
+            <div class="card-body text-center">
+              <h5 class="card-title">Lunettes Vintage</h5>
+              <p class="card-text">Le rétro revient à la mode !</p>
+              <p class="text-success fw-bold">13 500 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Lunettes Vintage', 13500, 'Images/Accessoire14.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <img src="Images/Accessoire15.jpg" class="card-img-top" alt="Lunettes Transparentes">
+            <div class="card-body text-center">
+              <h5 class="card-title">Lunettes Transparentes</h5>
+              <p class="card-text">Discrètes et modernes à la fois.</p>
+              <p class="text-success fw-bold">11 000 FCFA</p>
+              <button class="btn btn-success" onclick="ajouterAuPanier('Lunettes Transparentes', 11000, 'Images/Accessoire15.jpg')">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+
+              <!-- Petits sacs de sortie -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Accessoire16.jpg" class="card-img-top" alt="Petit sac noir">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sac de Soirée Noir</h5>
+            <p class="card-text">Chic et élégant pour vos sorties nocturnes.</p>
+            <p class="text-success fw-bold">18 000 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Sac de Soirée Noir', 18000, 'Images/Accessoire16.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Accessoire17.jpg" class="card-img-top" alt="Sac rouge élégant">
+          <div class="card-body text-center">
+            <h5 class="card-title">Petit Sac Rouge</h5>
+            <p class="card-text">Accessoire féminin parfait pour un look séduisant.</p>
+            <p class="text-success fw-bold">20 000 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Petit Sac Rouge', 20000, 'Images/Accessoire17.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Accessoire18.jpg" class="card-img-top" alt="Sac perlé doré">
+          <div class="card-body text-center">
+            <h5 class="card-title">Sac Doré Perlé</h5>
+            <p class="card-text">Apporte une touche de brillance à votre tenue.</p>
+            <p class="text-success fw-bold">22 000 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Sac Doré Perlé', 22000, 'Images/Accessoire18.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapeaux -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Accessoire19.jpg" class="card-img-top" alt="Chapeau été femme">
+          <div class="card-body text-center">
+            <h5 class="card-title">Chapeau d'Été Femme</h5>
+            <p class="card-text">Léger et stylé pour les journées ensoleillées.</p>
+            <p class="text-success fw-bold">9 000 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Chapeau Été Femme', 9000, 'Images/Accessoire19.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Accessoire20.jpg" class="card-img-top" alt="Chapeau homme">
+          <div class="card-body text-center">
+            <h5 class="card-title">Chapeau Classique Homme</h5>
+            <p class="card-text">Un style rétro pour les gentlemen modernes.</p>
+            <p class="text-success fw-bold">11 000 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Chapeau Homme Classique', 11000, 'Images/Accessoire20.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Accessoire21.jpg" class="card-img-top" alt="Chapeau plage">
+          <div class="card-body text-center">
+            <h5 class="card-title">Chapeau de Plage</h5>
+            <p class="card-text">Parfait pour un style décontracté et estival.</p>
+            <p class="text-success fw-bold">8 500 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Chapeau de Plage', 8500, 'Images/Accessoire21.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer simple -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+    </div>
+  </footer>
+  
+  <!-- Script panier -->
+  <script>
+    function ajouterAuPanier(nom, prix, image) {
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+      const index = panier.findIndex(p => p.nom === nom);
+      if (index !== -1) {
+        panier[index].quantite += 1;
+      } else {
+        panier.push({ nom, prix, image, quantite: 1 });
+      }
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert(`${nom} ajouté au panier !`);
+    }
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="essaie.js"></script>
+  

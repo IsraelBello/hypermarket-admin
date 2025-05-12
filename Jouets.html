@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jouets - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titre catégorie -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Jouets</h2>
+      <p class="text-center mb-5">Découvrez les meilleurs jouets pour distraire vos enfants.</p>
+      <div class="row g-4">
+
+      <!-- Jouet 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="Images/Jouet1.jpg" class="card-img-top" alt="Voiture Télécommandée">
+          <div class="card-body text-center">
+            <h5 class="card-title">Voiture Télécommandée</h5>
+            <p class="card-text">Rapide, rechargeable et facile à piloter.</p>
+            <p class="text-success fw-bold">18 000 FCFA</p>
+            <button class="btn btn-success" onclick="ajouterAuPanier('Voiture Télécommandée', 18000, 'Images/Jouet1.jpg')">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Produit jouet 2 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet2.jpg" class="card-img-top" alt="Voiture télécommandée">
+      <div class="card-body text-center">
+        <h5 class="card-title">Voiture Télécommandée 4x4</h5>
+        <p class="card-text">Résistante, rapide et idéale pour les enfants actifs.</p>
+        <p class="text-success fw-bold">15 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Voiture Télécommandée 4x4', 15000, 'Images/Jouet2.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 3 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet3.jpg" class="card-img-top" alt="Puzzle éducatif">
+      <div class="card-body text-center">
+        <h5 class="card-title">Puzzle Éducatif en Bois</h5>
+        <p class="card-text">Développe l'intelligence des enfants de 3 à 6 ans.</p>
+        <p class="text-success fw-bold">7 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Puzzle Éducatif en Bois', 7500, 'Images/Jouet3.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 4 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet4.jpg" class="card-img-top" alt="Maison de poupée">
+      <div class="card-body text-center">
+        <h5 class="card-title">Maison de Poupée en Bois</h5>
+        <p class="card-text">Colorée, grande et idéale pour les jeux imaginatifs.</p>
+        <p class="text-success fw-bold">32 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Maison de Poupée en Bois', 32000, 'Images/Jouet4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 5 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet5.jpg" class="card-img-top" alt="Lego city">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lego City - Caserne de Pompiers</h5>
+        <p class="card-text">Construis ta ville avec ce kit complet.</p>
+        <p class="text-success fw-bold">40 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lego City - Caserne de Pompiers', 40000, 'Images/Jouet5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 6 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet6.jpg" class="card-img-top" alt="Pistolet à eau">
+      <div class="card-body text-center">
+        <h5 class="card-title">Super Pistolet à Eau</h5>
+        <p class="card-text">Amusant pour les jeux d'extérieur durant l'été.</p>
+        <p class="text-success fw-bold">4 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Super Pistolet à Eau', 4500, 'Images/Jouet6.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 7 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet7.jpg" class="card-img-top" alt="Trotinette enfant">
+      <div class="card-body text-center">
+        <h5 class="card-title">Trottinette Enfant Pliable</h5>
+        <p class="card-text">Facile à transporter, idéale pour les sorties au parc.</p>
+        <p class="text-success fw-bold">19 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Trottinette Enfant Pliable', 19000, 'Images/Jouet7.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 8 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet8.jpg" class="card-img-top" alt="Table de jeux">
+      <div class="card-body text-center">
+        <h5 class="card-title">Table de Jeux Multifonctions</h5>
+        <p class="card-text">Inclut baby-foot, billard et ping-pong miniatures.</p>
+        <p class="text-success fw-bold">45 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Table de Jeux Multifonctions', 45000, 'Images/Jouet8.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit jouet 9 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet9.jpg" class="card-img-top" alt="Camion jouet">
+      <div class="card-body text-center">
+        <h5 class="card-title">Camion Benne en Plastique</h5>
+        <p class="card-text">Grand camion robuste pour jouer dehors.</p>
+        <p class="text-success fw-bold">8 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Camion Benne en Plastique', 8000, 'Images/Jouet9.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 10 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet10.jpg" class="card-img-top" alt="Jeu éducatif chiffres">
+      <div class="card-body text-center">
+        <h5 class="card-title">Jeu Éducatif des Chiffres</h5>
+        <p class="card-text">Apprentissage ludique des chiffres et calculs.</p>
+        <p class="text-success fw-bold">5 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Jeu Éducatif des Chiffres', 5500, 'Images/Jouet10.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 11 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet11.jpg" class="card-img-top" alt="Jeu de société">
+      <div class="card-body text-center">
+        <h5 class="card-title">Jeu de Société - Ludo</h5>
+        <p class="card-text">Classique et amusant pour jouer en famille.</p>
+        <p class="text-success fw-bold">6 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Jeu de Société - Ludo', 6000, 'Images/Jouet11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 12 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet12.jpg" class="card-img-top" alt="Tablette éducative">
+      <div class="card-body text-center">
+        <h5 class="card-title">Mini Tablette Éducative</h5>
+        <p class="card-text">Apprentissage de l'alphabet et des sons.</p>
+        <p class="text-success fw-bold">11 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Mini Tablette Éducative', 11000, 'Images/Jouet12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 13 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet13.jpg" class="card-img-top" alt="Dînette enfant">
+      <div class="card-body text-center">
+        <h5 class="card-title">Dînette pour Enfants</h5>
+        <p class="card-text">Casseroles, fruits, couverts pour jouer à la cuisine.</p>
+        <p class="text-success fw-bold">9 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Dînette pour Enfants', 9000, 'Images/Jouet13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 14 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet14.jpg" class="card-img-top" alt="Jeu de pêche">
+      <div class="card-body text-center">
+        <h5 class="card-title">Jeu de Pêche Magnétique</h5>
+        <p class="card-text">Attrape les poissons avec ta canne aimantée.</p>
+        <p class="text-success fw-bold">4 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Jeu de Pêche Magnétique', 4000, 'Images/Jouet14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 15 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet15.jpg" class="card-img-top" alt="Tricycle enfant">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tricycle Évolutif</h5>
+        <p class="card-text">Stable, coloré et avec repose-pieds.</p>
+        <p class="text-success fw-bold">25 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tricycle Évolutif', 25000, 'Images/Jouet15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 16 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet16.jpg" class="card-img-top" alt="Instruments de musique jouets">
+      <div class="card-body text-center">
+        <h5 class="card-title">Instruments de Musique Enfant</h5>
+        <p class="card-text">Tambour, maracas, xylophone et plus encore.</p>
+        <p class="text-success fw-bold">10 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Instruments de Musique Enfant', 10000, 'Images/Jouet16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 17 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet17.jpg" class="card-img-top" alt="Robot jouet">
+      <div class="card-body text-center">
+        <h5 class="card-title">Robot Interactif avec Lumières</h5>
+        <p class="card-text">Bouge, parle et fait des sons amusants.</p>
+        <p class="text-success fw-bold">22 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Robot Interactif', 22000, 'Images/Jouet17.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 18 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet18.jpg" class="card-img-top" alt="Voiture télécommandée">
+      <div class="card-body text-center">
+        <h5 class="card-title">Voiture Télécommandée</h5>
+        <p class="card-text">Rapide, puissante et facile à contrôler.</p>
+        <p class="text-success fw-bold">17 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Voiture Télécommandée', 17500, 'Images/Jouet18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 19 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet19.jpg" class="card-img-top" alt="Poupée parlante">
+      <div class="card-body text-center">
+        <h5 class="card-title">Poupée Parlante</h5>
+        <p class="card-text">Parle, chante et s’habille avec style.</p>
+        <p class="text-success fw-bold">12 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Poupée Parlante', 12000, 'Images/Jouet19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 20 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet20.jpg" class="card-img-top" alt="Tapis d'éveil bébé">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tapis d'Éveil Musical</h5>
+        <p class="card-text">Coloré, doux, avec des sons d’animaux et de musique.</p>
+        <p class="text-success fw-bold">14 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tapis d\'Éveil Musical', 14500, 'Images/Jouet20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 21 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet21.jpg" class="card-img-top" alt="Puzzle enfants">
+      <div class="card-body text-center">
+        <h5 class="card-title">Puzzle Animaux 100 Pièces</h5>
+        <p class="card-text">Développe la logique et la patience.</p>
+        <p class="text-success fw-bold">5 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Puzzle Animaux 100 Pièces', 5000, 'Images/Jouet21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 22 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet22.jpg" class="card-img-top" alt="Briques de construction">
+      <div class="card-body text-center">
+        <h5 class="card-title">Briques de Construction 120 Pièces</h5>
+        <p class="card-text">Jeu de créativité et d’assemblage.</p>
+        <p class="text-success fw-bold">10 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Briques de Construction 120 Pièces', 10000, 'Images/Jouet22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 23 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet23.jpg" class="card-img-top" alt="Kit de maquillage enfant">
+      <div class="card-body text-center">
+        <h5 class="card-title">Kit de Maquillage Enfant</h5>
+        <p class="card-text">Non toxique et lavable, pour jouer à la grande.</p>
+        <p class="text-success fw-bold">9 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Kit de Maquillage Enfant', 9500, 'Images/Jouet23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 24 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet24.jpg" class="card-img-top" alt="Garage voiture jouet">
+      <div class="card-body text-center">
+        <h5 class="card-title">Garage Voitures Jouet</h5>
+        <p class="card-text">Avec ascenseur, pistes et mini-voitures incluses.</p>
+        <p class="text-success fw-bold">18 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Garage Voitures Jouet', 18000, 'Images/Jouet24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit jouet 25 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Jouet25.jpg" class="card-img-top" alt="Tente de jeu enfant">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tente de Jeu Château</h5>
+        <p class="card-text">Tente pop-up pour s'amuser et se cacher comme un roi.</p>
+        <p class="text-success fw-bold">15 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tente de Jeu Château', 15000, 'Images/Jouet25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Script panier -->
+<script>
+  function ajouterAuPanier(nom, prix, image) {
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    const index = panier.findIndex(p => p.nom === nom);
+    if (index !== -1) {
+      panier[index].quantite += 1;
+    } else {
+      panier.push({ nom, prix, image, quantite: 1 });
+    }
+
+    localStorage.setItem("panier", JSON.stringify(panier));
+    alert(`${nom} ajouté au panier !`);
+  }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>

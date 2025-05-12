@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vêtements - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titre catégorie -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Vêtements</h2>
+      <p class="text-center mb-5">Découvrez nos vetêment de tendance.</p>
+      <div class="row g-4">
+      
+<!-- Produit 1 -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Vetement1.jpg" class="card-img-top" alt="Valises de voyage">
+    <div class="card-body text-center">
+      <h5 class="card-title">Valises de voyage</h5>
+      <p class="card-text">Ensemble de valises élégantes, solides et pratiques.</p>
+      <p class="text-success fw-bold">150 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Valises de voyage', 150000, 'Images/Vetement1.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 2 -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Vetement2.jpg" class="card-img-top" alt="Ensemble tailleur femme">
+    <div class="card-body text-center">
+      <h5 class="card-title">Tailleur Élégant Femme</h5>
+      <p class="card-text">Ensemble chic et professionnel pour femmes modernes.</p>
+      <p class="text-success fw-bold">35 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Tailleur Élégant Femme', 35000, 'Images/Vetement2.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 3 -->
+<div class="col-md-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Vetement3.jpg" class="card-img-top" alt="Sandales Noires Femme">
+    <div class="card-body text-center">
+      <h5 class="card-title">Sandales Noires Femme</h5>
+      <p class="card-text">Sandales confortables avec semelle épaisse.</p>
+      <p class="text-success fw-bold">9 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Sandales Noires Femme', 9000, 'Images/Vetement3.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit 4 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement4.jpg" class="card-img-top" alt="T-shirt homme décontracté">
+      <div class="card-body text-center">
+        <h5 class="card-title">T-shirt Décontracté Homme</h5>
+        <p class="card-text">Confortable et stylé pour un usage quotidien.</p>
+        <p class="text-success fw-bold">7 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('T-shirt Décontracté Homme', 7500, 'Images/Vetement4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 5 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement5.jpg" class="card-img-top" alt="Ensemble tailleur femme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tailleur Élégant Femme</h5>
+        <p class="card-text">Ensemble chic et professionnel pour femmes modernes.</p>
+        <p class="text-success fw-bold">35 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tailleur Élégant Femme', 35000, 'Images/Vetement5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 6 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement6.jpg" class="card-img-top" alt="Robe d'été fleurie">
+      <div class="card-body text-center">
+        <h5 class="card-title">Robe Fleurie Été</h5>
+        <p class="card-text">Légère et parfaite pour les journées chaudes.</p>
+        <p class="text-success fw-bold">18 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Robe Fleurie Été', 18000, 'Images/Vetement6.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 7 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement7.jpg" class="card-img-top" alt="Jeans slim homme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Jean Slim Homme</h5>
+        <p class="card-text">Coupe moderne avec une finition de qualité.</p>
+        <p class="text-success fw-bold">22 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Jean Slim Homme', 22000, 'Images/Vetement7.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 8 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement8.jpg" class="card-img-top" alt="Veste en cuir">
+      <div class="card-body text-center">
+        <h5 class="card-title">Veste Cuir Homme</h5>
+        <p class="card-text">Look audacieux et finition haut de gamme.</p>
+        <p class="text-success fw-bold">60 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Veste Cuir Homme', 60000, 'Images/Vetement8.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 9 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement9.jpg" class="card-img-top" alt="Combinaison femme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Combinaison Mode Femme</h5>
+        <p class="card-text">Design élégant pour toute occasion.</p>
+        <p class="text-success fw-bold">28 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Combinaison Mode Femme', 28000, 'Images/Vetement9.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 10 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement10.jpg" class="card-img-top" alt="Sweat à capuche homme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Sweat Capuche Homme</h5>
+        <p class="card-text">Style urbain et confort assuré.</p>
+        <p class="text-success fw-bold">19 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Sweat Capuche Homme', 19500, 'Images/Vetement10.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 11 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement11.jpg" class="card-img-top" alt="Pantalon classique femme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pantalon Classique Femme</h5>
+        <p class="card-text">Polyvalent pour le bureau ou les sorties.</p>
+        <p class="text-success fw-bold">20 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pantalon Classique Femme', 20000, 'Images/Vetement11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 12 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement12.jpg" class="card-img-top" alt="Chemise homme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chemise Homme Classique</h5>
+        <p class="card-text">Idéale pour le travail ou les occasions formelles.</p>
+        <p class="text-success fw-bold">15 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chemise Homme Classique', 15000, 'Images/Vetement12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 13 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement13.jpg" class="card-img-top" alt="Pull chaud femme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pull Chaud Femme</h5>
+        <p class="card-text">Parfait pour affronter l’hiver avec style.</p>
+        <p class="text-success fw-bold">25 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pull Chaud Femme', 25000, 'Images/Vetement13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 14 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement14.jpg" class="card-img-top" alt="Pyjama doux">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pyjama Douillet</h5>
+        <p class="card-text">Confort optimal pour de belles nuits.</p>
+        <p class="text-success fw-bold">12 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pyjama Douillet', 12000, 'Images/Vetement14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 15 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement15.jpg" class="card-img-top" alt="Manteau d’hiver">
+      <div class="card-body text-center">
+        <h5 class="card-title">Manteau Long Hiver</h5>
+        <p class="card-text">Chaleur et élégance assurées par temps froid.</p>
+        <p class="text-success fw-bold">45 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Manteau Long Hiver', 45000, 'Images/Vetement15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 16 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement16.jpg" class="card-img-top" alt="Sneakers Classiques">
+      <div class="card-body text-center">
+        <h5 class="card-title">Sneakers Classiques</h5>
+        <p class="card-text">Confort et style pour un usage quotidien.</p>
+        <p class="text-success fw-bold">25 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Sneakers Classiques', 25000, 'Images/Vetement16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 17 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement17.jpg" class="card-img-top" alt="Chaussures de ville noires">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chaussures de Ville</h5>
+        <p class="card-text">Parfaites pour les rendez-vous professionnels.</p>
+        <p class="text-success fw-bold">35 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chaussures de Ville', 35000, 'Images/Vetement18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 18 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement18.jpg" class="card-img-top" alt="Bottes d’hiver fourrées">
+      <div class="card-body text-center">
+        <h5 class="card-title">Bottes Fourrées</h5>
+        <p class="card-text">Idéales pour rester au chaud pendant l’hiver.</p>
+        <p class="text-success fw-bold">40 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Bottes Fourrées', 40000, 'Images/Vetement18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 19 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement19.jpg" class="card-img-top" alt="Sandales en cuir">
+      <div class="card-body text-center">
+        <h5 class="card-title">Sandales en Cuir</h5>
+        <p class="card-text">Parfaites pour l’été avec un look naturel.</p>
+        <p class="text-success fw-bold">20 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Sandales en Cuir', 20000, 'Images/Vetement19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 20 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement20.jpg" class="card-img-top" alt="Chaussures de sport running">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chaussures de Running</h5>
+        <p class="card-text">Conçues pour les amateurs de jogging et de fitness.</p>
+        <p class="text-success fw-bold">30 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chaussures de Running', 30000, 'Images/Vetement20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 21 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement21.jpg" class="card-img-top" alt="Escarpins élégants">
+      <div class="card-body text-center">
+        <h5 class="card-title">Escarpins Élégants</h5>
+        <p class="card-text">Un choix raffiné pour les grandes occasions.</p>
+        <p class="text-success fw-bold">28 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Escarpins Élégants', 28000, 'Images/Vetement21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 22 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement22.jpg" class="card-img-top" alt="Mocassins homme cuir">
+      <div class="card-body text-center">
+        <h5 class="card-title">Mocassins Cuir</h5>
+        <p class="card-text">Style décontracté avec une touche de classe.</p>
+        <p class="text-success fw-bold">32 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Mocassins Cuir', 32000, 'Images/Vetement22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 23 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement23.jpg" class="card-img-top" alt="Tongs plage">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tongs de Plage</h5>
+        <p class="card-text">Légères et confortables pour la plage.</p>
+        <p class="text-success fw-bold">10 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tongs de Plage', 10000, 'Images/Vetement23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 24 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement24.jpg" class="card-img-top" alt="Derbies homme">
+      <div class="card-body text-center">
+        <h5 class="card-title">Derbies Homme</h5>
+        <p class="card-text">Un classique indémodable pour toutes les saisons.</p>
+        <p class="text-success fw-bold">34 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Derbies Homme', 34000, 'Images/Vetement24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 25 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement25.jpg" class="card-img-top" alt="Chaussures montantes">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chaussures Montantes</h5>
+        <p class="card-text">Soutien et style pour un look urbain.</p>
+        <p class="text-success fw-bold">38 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chaussures Montantes', 38000, 'Images/Vetement25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 26 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement26.jpg" class="card-img-top" alt="Talons aiguilles">
+      <div class="card-body text-center">
+        <h5 class="card-title">Talons Aiguilles</h5>
+        <p class="card-text">Pour une allure glamour et féminine.</p>
+        <p class="text-success fw-bold">27 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Talons Aiguilles', 27000, 'Images/Vetement26.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit 27 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement27.jpg" class="card-img-top" alt="T-shirt Blanc Basique">
+      <div class="card-body text-center">
+        <h5 class="card-title">T-shirt Blanc Basique</h5>
+        <p class="card-text">Indispensable dans toute garde-robe.</p>
+        <p class="text-success fw-bold">8 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('T-shirt Blanc Basique', 8000, 'Images/Vetement27.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 28 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement28.jpg" class="card-img-top" alt="T-shirt Noir Col Rond">
+      <div class="card-body text-center">
+        <h5 class="card-title">T-shirt Noir Col Rond</h5>
+        <p class="card-text">Look simple et efficace.</p>
+        <p class="text-success fw-bold">9 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('T-shirt Noir Col Rond', 9000, 'Images/Vetement28.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 29 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement29.jpg" class="card-img-top" alt="T-shirt Graphique">
+      <div class="card-body text-center">
+        <h5 class="card-title">T-shirt Graphique</h5>
+        <p class="card-text">Affirme ton style avec des motifs originaux.</p>
+        <p class="text-success fw-bold">10 500 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('T-shirt Graphique', 10500, 'Images/Vetement29.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit 30 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Vetement30.jpg" class="card-img-top" alt="T-shirt Oversize">
+      <div class="card-body text-center">
+        <h5 class="card-title">T-shirt Oversize</h5>
+        <p class="card-text">Confort et style décontracté.</p>
+        <p class="text-success fw-bold">11 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('T-shirt Oversize', 11000, 'Images/Vetement30.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  
+
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+  <div class="container text-center">
+    <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Script panier -->
+<script>
+  function ajouterAuPanier(nom, prix, image) {
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    const index = panier.findIndex(p => p.nom === nom);
+    if (index !== -1) {
+      panier[index].quantite += 1;
+    } else {
+      panier.push({ nom, prix, image, quantite: 1 });
+    }
+
+    localStorage.setItem("panier", JSON.stringify(panier));
+    alert(`${nom} ajouté au panier !`);
+  }
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>

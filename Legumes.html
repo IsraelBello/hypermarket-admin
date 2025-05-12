@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Légumes - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Titre catégorie -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Légumes</h2>
+      <p class="text-center mb-5">Faites à mangé pour vos enfants avec les légumes.</p>
+      <div class="row g-4">
+
+        <!-- Produit Légume 1 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume1.jpg" class="card-img-top" alt="Tomates">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tomates</h5>
+        <p class="card-text">Rouges, juteuses et savoureuses.</p>
+        <p class="text-success fw-bold">1200 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tomates', 1200, 'Images/Legume1.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 2 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume2.jpg" class="card-img-top" alt="Carottes">
+      <div class="card-body text-center">
+        <h5 class="card-title">Carottes</h5>
+        <p class="card-text">Croquantes et riches en vitamines.</p>
+        <p class="text-success fw-bold">800 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Carottes', 800, 'Images/Legume2.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 3 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume3.jpg" class="card-img-top" alt="Concombres">
+      <div class="card-body text-center">
+        <h5 class="card-title">Concombres</h5>
+        <p class="card-text">Frais et désaltérants.</p>
+        <p class="text-success fw-bold">700 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Concombres', 700, 'Images/Legume3.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 4 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume4.jpg" class="card-img-top" alt="Aubergines">
+      <div class="card-body text-center">
+        <h5 class="card-title">Aubergines</h5>
+        <p class="card-text">Délicieuses en gratin ou sautées.</p>
+        <p class="text-success fw-bold">1100 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Aubergines', 1100, 'Images/Legume4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 5 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume5.jpg" class="card-img-top" alt="Poivrons Verts">
+      <div class="card-body text-center">
+        <h5 class="card-title">Poivrons Verts</h5>
+        <p class="card-text">Parfaits pour vos sauces et salades.</p>
+        <p class="text-success fw-bold">1300 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Poivrons Verts', 1300, 'Images/Legume5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 6 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume6.jpg" class="card-img-top" alt="Chou Vert">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chou Vert</h5>
+        <p class="card-text">Feuilles tendres et croquantes.</p>
+        <p class="text-success fw-bold">900 FCFA / pièce</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chou Vert', 900, 'Images/Legume6.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 7 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume7.jpg" class="card-img-top" alt="Épinards">
+      <div class="card-body text-center">
+        <h5 class="card-title">Épinards</h5>
+        <p class="card-text">Riche en fer et en fibres.</p>
+        <p class="text-success fw-bold">700 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Épinards', 700, 'Images/Legume7.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 8 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume8.jpg" class="card-img-top" alt="Oignons">
+      <div class="card-body text-center">
+        <h5 class="card-title">Oignons</h5>
+        <p class="card-text">Essentiels pour toutes vos recettes.</p>
+        <p class="text-success fw-bold">900 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Oignons', 900, 'Images/Legume8.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 9 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume9.jpg" class="card-img-top" alt="Chou-Fleur">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chou-Fleur gratiné au jambon</h5>
+        <p class="card-text">Délicieux en gratin ou vapeur.</p>
+        <p class="text-success fw-bold">1500 FCFA / pièce</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chou-Fleur', 1500, 'Images/Legume9.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 10 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume10.jpg" class="card-img-top" alt="Gombos">
+      <div class="card-body text-center">
+        <h5 class="card-title">Gombos</h5>
+        <p class="card-text">Idéal pour vos sauces africaines.</p>
+        <p class="text-success fw-bold">1300 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Gombos', 1300, 'Images/Legume10.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit Légume 11 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume11.jpg" class="card-img-top" alt="Piments Verts">
+      <div class="card-body text-center">
+        <h5 class="card-title">Piments Verts</h5>
+        <p class="card-text">Parfaits pour relever vos plats.</p>
+        <p class="text-success fw-bold">1000 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Piments Verts', 1000, 'Images/Legume11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 12 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume12.jpg" class="card-img-top" alt="Courgettes">
+      <div class="card-body text-center">
+        <h5 class="card-title">Courgettes</h5>
+        <p class="card-text">Tendres et savoureuses en cuisine.</p>
+        <p class="text-success fw-bold">900 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Courgettes', 900, 'Images/Legume12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 13 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume13.jpg" class="card-img-top" alt="Haricots Verts">
+      <div class="card-body text-center">
+        <h5 class="card-title">Haricots Verts</h5>
+        <p class="card-text">Frais et croquants.</p>
+        <p class="text-success fw-bold">1400 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Haricots Verts', 1400, 'Images/Legume13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 14 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume14.jpg" class="card-img-top" alt="Radis">
+      <div class="card-body text-center">
+        <h5 class="card-title">Radis</h5>
+        <p class="card-text">Un goût légèrement piquant et rafraîchissant.</p>
+        <p class="text-success fw-bold">1000 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Radis', 1000, 'Images/Legume14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 15 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume15.jpg" class="card-img-top" alt="Betteraves">
+      <div class="card-body text-center">
+        <h5 class="card-title">Betteraves</h5>
+        <p class="card-text">Douces et riches en nutriments.</p>
+        <p class="text-success fw-bold">1300 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Betteraves', 1300, 'Images/Legume15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 16 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume16.jpg" class="card-img-top" alt="Choux de Bruxelles">
+      <div class="card-body text-center">
+        <h5 class="card-title">Choux de Bruxelles</h5>
+        <p class="card-text">Délicieux sautés ou à la vapeur.</p>
+        <p class="text-success fw-bold">1600 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Choux de Bruxelles', 1600, 'Images/Legume16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 17 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume17.jpg" class="card-img-top" alt="Fenouil">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fenouil</h5>
+        <p class="card-text">Aromatique et croquant.</p>
+        <p class="text-success fw-bold">1700 FCFA / pièce</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fenouil', 1700, 'Images/Legume17.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 18 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume18.jpg" class="card-img-top" alt="Navets">
+      <div class="card-body text-center">
+        <h5 class="card-title">Navets</h5>
+        <p class="card-text">Idéaux pour potages et ragoûts.</p>
+        <p class="text-success fw-bold">1100 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Navets', 1100, 'Images/Legume18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 19 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume19.jpg" class="card-img-top" alt="Poireaux">
+      <div class="card-body text-center">
+        <h5 class="card-title">Poireaux</h5>
+        <p class="card-text">Un ingrédient incontournable pour vos potages.</p>
+        <p class="text-success fw-bold">1000 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Poireaux', 1000, 'Images/Legume19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 20 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume20.jpg" class="card-img-top" alt="Céleri">
+      <div class="card-body text-center">
+        <h5 class="card-title">Céleri</h5>
+        <p class="card-text">Parfait pour les bouillons et jus détox.</p>
+        <p class="text-success fw-bold">1200 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Céleri', 1200, 'Images/Legume20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit Légume 21 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume21.jpg" class="card-img-top" alt="Patates Douces">
+      <div class="card-body text-center">
+        <h5 class="card-title">Patates Douces</h5>
+        <p class="card-text">Sucrées et délicieuses en purée ou frites.</p>
+        <p class="text-success fw-bold">1300 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Patates Douces', 1300, 'Images/Legume21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 22 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume22.jpg" class="card-img-top" alt="Pommes de Terre">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pommes de Terre</h5>
+        <p class="card-text">Légume polyvalent pour tous vos plats.</p>
+        <p class="text-success fw-bold">1000 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pommes de Terre', 1000, 'Images/Legume22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 23 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume23.jpg" class="card-img-top" alt="Pois Chiches">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pois Chiches</h5>
+        <p class="card-text">Riches en protéines et parfaits pour les houmous.</p>
+        <p class="text-success fw-bold">1800 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pois Chiches', 1800, 'Images/Legume23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 24 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume24.jpg" class="card-img-top" alt="Choux Rouges">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chou Rouge</h5>
+        <p class="card-text">Croquant et coloré pour vos salades.</p>
+        <p class="text-success fw-bold">1000 FCFA / pièce</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chou Rouge', 1000, 'Images/Legume24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 25 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume25.jpg" class="card-img-top" alt="Choux Chinois">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chou Chinois</h5>
+        <p class="card-text">Incontournable dans vos recettes asiatiques.</p>
+        <p class="text-success fw-bold">1200 FCFA / pièce</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chou Chinois', 1200, 'Images/Legume25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 26 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume26.jpg" class="card-img-top" alt="Champignons">
+      <div class="card-body text-center">
+        <h5 class="card-title">Champignons de Paris</h5>
+        <p class="card-text">Délicieux et riches en saveur.</p>
+        <p class="text-success fw-bold">2200 FCFA / barquette</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Champignons de Paris', 2200, 'Images/Legume26.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 27 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume27.jpg" class="card-img-top" alt="Laitue">
+      <div class="card-body text-center">
+        <h5 class="card-title">Laitue</h5>
+        <p class="card-text">Feuilles croquantes pour des salades parfaites.</p>
+        <p class="text-success fw-bold">600 FCFA / pièce</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Laitue', 600, 'Images/Legume27.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 28 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume28.jpg" class="card-img-top" alt="Basilic Frais">
+      <div class="card-body text-center">
+        <h5 class="card-title">Basilic Frais</h5>
+        <p class="card-text">Aromatique pour vos plats méditerranéens.</p>
+        <p class="text-success fw-bold">500 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Basilic Frais', 500, 'Images/Legume28.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 29 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume29.jpg" class="card-img-top" alt="Coriandre Fraîche">
+      <div class="card-body text-center">
+        <h5 class="card-title">Coriandre Fraîche</h5>
+        <p class="card-text">Un goût unique pour vos sauces et plats.</p>
+        <p class="text-success fw-bold">500 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Coriandre Fraîche', 500, 'Images/Legume29.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 30 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume30.jpg" class="card-img-top" alt="Persil">
+      <div class="card-body text-center">
+        <h5 class="card-title">Persil</h5>
+        <p class="card-text">Idéal pour parfumer vos plats et sauces.</p>
+        <p class="text-success fw-bold">400 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Persil', 400, 'Images/Legume30.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 31 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume31.jpg" class="card-img-top" alt="Oseille">
+      <div class="card-body text-center">
+        <h5 class="card-title">Oseille</h5>
+        <p class="card-text">Parfaite pour des sauces acidulées.</p>
+        <p class="text-success fw-bold">800 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Oseille', 800, 'Images/Legume31.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 32 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume32.jpg" class="card-img-top" alt="Ciboulette">
+      <div class="card-body text-center">
+        <h5 class="card-title">Ciboulette</h5>
+        <p class="card-text">Parfume délicatement vos plats.</p>
+        <p class="text-success fw-bold">500 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Ciboulette', 500, 'Images/Legume32.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 33 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume33.jpg" class="card-img-top" alt="Oignon Vert">
+      <div class="card-body text-center">
+        <h5 class="card-title">Oignon Vert</h5>
+        <p class="card-text">Pour relever vos salades et plats chauds.</p>
+        <p class="text-success fw-bold">500 FCFA / botte</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Oignon Vert', 500, 'Images/Legume33.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Légume 34 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Legume34.jpg" class="card-img-top" alt="Chayote">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chayote</h5>
+        <p class="card-text">Parfait pour potages et gratins.</p>
+        <p class="text-success fw-bold">1200 FCFA / kg</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chayote', 1200, 'Images/Legume34.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+</div>
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+<div class="container text-center">
+  <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+</div>
+</footer>
+
+<!-- Script panier -->
+<script>
+function ajouterAuPanier(nom, prix, image) {
+  let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+  const index = panier.findIndex(p => p.nom === nom);
+  if (index !== -1) {
+    panier[index].quantite += 1;
+  } else {
+    panier.push({ nom, prix, image, quantite: 1 });
+  }
+
+  localStorage.setItem("panier", JSON.stringify(panier));
+  alert(`${nom} ajouté au panier !`);
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>
+
+
+  
+  

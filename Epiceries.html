@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produits Laitiers - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titre catégorie -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Épices Sèches</h2>
+      <p class="text-center mb-5">Rehaussez la saveur de vos plats avec nos épices sèches de qualité supérieure.</p>
+      <div class="row g-4">
+<!-- Produit Épice 1 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice1.jpg" class="card-img-top" alt="Poivre noir">
+      <div class="card-body text-center">
+        <h5 class="card-title">Poivre noir</h5>
+        <p class="card-text">Intense et relevé, parfait pour assaisonner.</p>
+        <p class="text-success fw-bold">1 000 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Poivre noir', 1000, 'Images/Epice1.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 2 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice2.jpg" class="card-img-top" alt="Curry">
+      <div class="card-body text-center">
+        <h5 class="card-title">Curry</h5>
+        <p class="card-text">Mélange d’épices aux arômes exotiques.</p>
+        <p class="text-success fw-bold">900 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Curry', 900, 'Images/Epice2.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 3 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice3.jpg" class="card-img-top" alt="Paprika">
+      <div class="card-body text-center">
+        <h5 class="card-title">Paprika</h5>
+        <p class="card-text">Doux et coloré, idéal pour les viandes.</p>
+        <p class="text-success fw-bold">850 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Paprika', 850, 'Images/Epice3.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit Épice 4 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice4.jpg" class="card-img-top" alt="Curcuma">
+      <div class="card-body text-center">
+        <h5 class="card-title">Curcuma</h5>
+        <p class="card-text">Anti-inflammatoire, parfait pour les plats mijotés.</p>
+        <p class="text-success fw-bold">750 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Curcuma', 750, 'Images/Epice4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 5 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice5.jpg" class="card-img-top" alt="Gingembre en poudre">
+      <div class="card-body text-center">
+        <h5 class="card-title">Gingembre en poudre</h5>
+        <p class="card-text">Tonique et piquant, stimule la digestion.</p>
+        <p class="text-success fw-bold">950 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Gingembre en poudre', 950, 'Images/Epice5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 6 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice6.jpg" class="card-img-top" alt="Cannelle">
+      <div class="card-body text-center">
+        <h5 class="card-title">Cannelle</h5>
+        <p class="card-text">Douce et parfumée, parfaite pour les desserts.</p>
+        <p class="text-success fw-bold">1 200 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Cannelle', 1200, 'Images/Epice6.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 7 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice7.jpg" class="card-img-top" alt="Clou de girofle">
+      <div class="card-body text-center">
+        <h5 class="card-title">Clou de girofle</h5>
+        <p class="card-text">Parfum puissant, idéal pour les marinades.</p>
+        <p class="text-success fw-bold">1 100 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Clou de girofle', 1100, 'Images/Epice7.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 8 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice8.jpg" class="card-img-top" alt="Muscade moulue">
+      <div class="card-body text-center">
+        <h5 class="card-title">Muscade moulue</h5>
+        <p class="card-text">Parfume les sauces et les gratins.</p>
+        <p class="text-success fw-bold">950 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Muscade moulue', 950, 'Images/Epice8.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 9 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice9.jpg" class="card-img-top" alt="Piment doux">
+      <div class="card-body text-center">
+        <h5 class="card-title">Piment doux</h5>
+        <p class="card-text">Relève légèrement sans piquer.</p>
+        <p class="text-success fw-bold">700 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Piment doux', 700, 'Images/Epice9.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 10 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice10.jpg" class="card-img-top" alt="Piment fort">
+      <div class="card-body text-center">
+        <h5 class="card-title">Piment fort</h5>
+        <p class="card-text">Puissant et ardent, pour les amateurs de piquant.</p>
+        <p class="text-success fw-bold">950 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Piment fort', 950, 'Images/Epice10.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit Épice 11 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice11.jpg" class="card-img-top" alt="Thym">
+      <div class="card-body text-center">
+        <h5 class="card-title">Thym</h5>
+        <p class="card-text">Idéal pour les grillades et plats mijotés.</p>
+        <p class="text-success fw-bold">600 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Thym', 600, 'Images/Epice11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 12 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice12.jpg" class="card-img-top" alt="Romarin">
+      <div class="card-body text-center">
+        <h5 class="card-title">Romarin</h5>
+        <p class="card-text">Aromatique, excellent pour les viandes rôties.</p>
+        <p class="text-success fw-bold">700 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Romarin', 700, 'Images/Epice12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 13 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice13.jpg" class="card-img-top" alt="Laurier séché">
+      <div class="card-body text-center">
+        <h5 class="card-title">Laurier séché</h5>
+        <p class="card-text">Feuilles entières pour parfumer les sauces.</p>
+        <p class="text-success fw-bold">500 FCFA / 50g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Laurier séché', 500, 'Images/Epice13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 14 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice14.jpg" class="card-img-top" alt="Curry">
+      <div class="card-body text-center">
+        <h5 class="card-title">Curry</h5>
+        <p class="card-text">Mélange d'épices indien aux saveurs complexes.</p>
+        <p class="text-success fw-bold">900 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Curry', 900, 'Images/Epice14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 15 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice15.jpg" class="card-img-top" alt="Paprika">
+      <div class="card-body text-center">
+        <h5 class="card-title">Paprika</h5>
+        <p class="card-text">Douce saveur fumée, donne une belle couleur rouge.</p>
+        <p class="text-success fw-bold">850 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Paprika', 850, 'Images/Epice15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 16 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice16.jpg" class="card-img-top" alt="Fenouil">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fenouil</h5>
+        <p class="card-text">Graines parfumées, idéales pour poissons et pains.</p>
+        <p class="text-success fw-bold">750 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fenouil', 750, 'Images/Epice16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 17 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice17.jpg" class="card-img-top" alt="Anis étoilé">
+      <div class="card-body text-center">
+        <h5 class="card-title">Anis étoilé</h5>
+        <p class="card-text">Saveur douce et légèrement sucrée, pour infusions.</p>
+        <p class="text-success fw-bold">1 300 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Anis étoilé', 1300, 'Images/Epice17.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 18 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice18.jpg" class="card-img-top" alt="Poivre blanc">
+      <div class="card-body text-center">
+        <h5 class="card-title">Poivre blanc</h5>
+        <p class="card-text">Plus doux que le noir, parfait pour les sauces claires.</p>
+        <p class="text-success fw-bold">1 400 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Poivre blanc', 1400, 'Images/Epice18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 19 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice19.jpg" class="card-img-top" alt="Cumin">
+      <div class="card-body text-center">
+        <h5 class="card-title">Cumin</h5>
+        <p class="card-text">Saveur chaude, utilisé dans la cuisine orientale.</p>
+        <p class="text-success fw-bold">900 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Cumin', 900, 'Images/Epice19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 20 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice20.jpg" class="card-img-top" alt="Graines de moutarde">
+      <div class="card-body text-center">
+        <h5 class="card-title">Graines de moutarde</h5>
+        <p class="card-text">Utilisées dans les sauces et conserves.</p>
+        <p class="text-success fw-bold">800 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Graines de moutarde', 800, 'Images/Epice20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 21 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice21.jpg" class="card-img-top" alt="Coriandre moulue">
+      <div class="card-body text-center">
+        <h5 class="card-title">Coriandre moulue</h5>
+        <p class="card-text">Arôme citronné, pour curry et plats asiatiques.</p>
+        <p class="text-success fw-bold">850 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Coriandre moulue', 850, 'Images/Epice21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 22 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice22.jpg" class="card-img-top" alt="Cardamome">
+      <div class="card-body text-center">
+        <h5 class="card-title">Cardamome</h5>
+        <p class="card-text">Parfum puissant, pour desserts et thés.</p>
+        <p class="text-success fw-bold">1 800 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Cardamome', 1800, 'Images/Epice22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 23 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice23.jpg" class="card-img-top" alt="Fenugrec">
+      <div class="card-body text-center">
+        <h5 class="card-title">Fenugrec</h5>
+        <p class="card-text">Utilisé dans les mélanges de curry et plats africains.</p>
+        <p class="text-success fw-bold">750 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Fenugrec', 750, 'Images/Epice23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 24 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice24.jpg" class="card-img-top" alt="Piment en flocons">
+      <div class="card-body text-center">
+        <h5 class="card-title">Piment en flocons</h5>
+        <p class="card-text">Parfait pour les sauces piquantes et les pizzas.</p>
+        <p class="text-success fw-bold">950 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Piment en flocons', 950, 'Images/Epice24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Épice 25 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Epice25.jpg" class="card-img-top" alt="Zaatar">
+      <div class="card-body text-center">
+        <h5 class="card-title">Zaatar</h5>
+        <p class="card-text">Mélange oriental au goût de thym et sésame.</p>
+        <p class="text-success fw-bold">1 000 FCFA / 100g</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Zaatar', 1000, 'Images/Epice25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+</div>
+
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+<div class="container text-center">
+  <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+</div>
+</footer>
+
+<!-- Script panier -->
+<script>
+function ajouterAuPanier(nom, prix, image) {
+  let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+  const index = panier.findIndex(p => p.nom === nom);
+  if (index !== -1) {
+    panier[index].quantite += 1;
+  } else {
+    panier.push({ nom, prix, image, quantite: 1 });
+  }
+
+  localStorage.setItem("panier", JSON.stringify(panier));
+  alert(`${nom} ajouté au panier !`);
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>
+    

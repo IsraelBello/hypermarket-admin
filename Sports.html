@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports - HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Titre catégorie -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Accessoires de sport</h2>
+      <p class="text-center mb-5">Découvrez nos article de sport.</p>
+      <div class="row g-4">
+
+
+         <!-- Produit sport 1 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport1.jpg" class="card-img-top" alt="Ballon de Football">
+      <div class="card-body text-center">
+        <h5 class="card-title">Ballon de Football Adidas</h5>
+        <p class="card-text">Ballon de qualité professionnelle, idéal pour les compétitions.</p>
+        <p class="text-success fw-bold">25 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Ballon de Football Adidas', 25000, 'Images/Sport1.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 2 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport2.jpg" class="card-img-top" alt="Chaussures de Running">
+      <div class="card-body text-center">
+        <h5 class="card-title">Chaussures de Running Nike</h5>
+        <p class="card-text">Parfaites pour le jogging et la course de fond.</p>
+        <p class="text-success fw-bold">45 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Chaussures de Running Nike', 45000, 'Images/Sport2.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 3 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport3.jpg" class="card-img-top" alt="Vélo de Montagne">
+      <div class="card-body text-center">
+        <h5 class="card-title">Vélo de Montagne Rockrider</h5>
+        <p class="card-text">Conçu pour l'aventure sur tous les terrains.</p>
+        <p class="text-success fw-bold">150 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Vélo de Montagne Rockrider', 150000, 'Images/Sport3.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 4 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport4.jpg" class="card-img-top" alt="Gants de Boxe">
+      <div class="card-body text-center">
+        <h5 class="card-title">Gants de Boxe Everlast</h5>
+        <p class="card-text">Gants robustes pour entraînements intensifs.</p>
+        <p class="text-success fw-bold">30 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Gants de Boxe Everlast', 30000, 'Images/Sport4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 5 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport5.jpg" class="card-img-top" alt="Raquette de Tennis">
+      <div class="card-body text-center">
+        <h5 class="card-title">Raquette de Tennis Wilson</h5>
+        <p class="card-text">Raquette légère pour joueurs amateurs et professionnels.</p>
+        <p class="text-success fw-bold">60 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Raquette de Tennis Wilson', 60000, 'Images/Sport5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 6 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport6.jpg" class="card-img-top" alt="Tapis de Yoga">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tapis de Yoga Antidérapant</h5>
+        <p class="card-text">Confort maximal pour vos séances de yoga et de fitness.</p>
+        <p class="text-success fw-bold">18 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tapis de Yoga Antidérapant', 18000, 'Images/Sport6.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 7 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport7.jpg" class="card-img-top" alt="Haltères Réglables">
+      <div class="card-body text-center">
+        <h5 class="card-title">Haltères Réglables</h5>
+        <p class="card-text">Adapté pour un entraînement complet du corps.</p>
+        <p class="text-success fw-bold">70 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Haltères Réglables', 70000, 'Images/Sport7.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 8 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport8.jpg" class="card-img-top" alt="T-Shirt Sport Dry-Fit">
+      <div class="card-body text-center">
+        <h5 class="card-title">T-Shirt Sport Dry-Fit</h5>
+        <p class="card-text">Tissu respirant pour des performances optimales.</p>
+        <p class="text-success fw-bold">10 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('T-Shirt Sport Dry-Fit', 10000, 'Images/Sport8.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 9 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport9.jpg" class="card-img-top" alt="Montre Connectée Sport">
+      <div class="card-body text-center">
+        <h5 class="card-title">Montre Connectée Sport</h5>
+        <p class="card-text">Suivi d'activité, cardio, GPS intégré.</p>
+        <p class="text-success fw-bold">55 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Montre Connectée Sport', 55000, 'Images/Sport9.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 10 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport10.jpg" class="card-img-top" alt="Sac de Sport Nike">
+      <div class="card-body text-center">
+        <h5 class="card-title">Sac de Sport Nike</h5>
+        <p class="card-text">Grand espace pour transporter tous vos équipements.</p>
+        <p class="text-success fw-bold">20 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Sac de Sport Nike', 20000, 'Images/Sport10.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit sport 11 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport11.jpg" class="card-img-top" alt="Ballon de Basketball">
+      <div class="card-body text-center">
+        <h5 class="card-title">Ballon de Basketball Spalding</h5>
+        <p class="card-text">Parfait pour le jeu intérieur et extérieur.</p>
+        <p class="text-success fw-bold">28 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Ballon de Basketball Spalding', 28000, 'Images/Sport11.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+ <!-- Produit sport 12 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport12.jpg" class="card-img-top" alt="Maillot de Foot - PSG">
+      <div class="card-body text-center">
+        <h5 class="card-title">Maillot de Foot - PSG</h5>
+        <p class="card-text">Supportez votre équipe préférée avec style.</p>
+        <p class="text-success fw-bold">25 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Maillot de Foot - PSG', 25000, 'Images/Sport12.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+ <!-- Produit sport 13 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport13.jpg" class="card-img-top" alt="Maillot de Basket - Lakers">
+      <div class="card-body text-center">
+        <h5 class="card-title">Maillot de Basket - Lakers</h5>
+        <p class="card-text">Représentez la légende sur le terrain.</p>
+        <p class="text-success fw-bold">30 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Maillot de Basket - Lakers', 30000, 'Images/Sport13.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Produit sport 14 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport14.jpg" class="card-img-top" alt="Maillot de Basket - Chicago Bulls">
+      <div class="card-body text-center">
+        <h5 class="card-title">Maillot de Basket - Chicago Bulls</h5>
+        <p class="card-text">Affichez la puissance des Bulls avec ce maillot emblématique.</p>
+        <p class="text-success fw-bold">32 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Maillot de Basket - Chicago Bulls', 32000, 'Images/Sport14.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 15 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport15.jpg" class="card-img-top" alt="Filet de Volley-Ball">
+      <div class="card-body text-center">
+        <h5 class="card-title">Filet de Volley-Ball Résistant</h5>
+        <p class="card-text">Filet robuste pour terrains de sport.</p>
+        <p class="text-success fw-bold">32 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Filet de Volley-Ball Résistant', 32000, 'Images/Sport15.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 16 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport16.jpg" class="card-img-top" alt="Pagaie Kayak">
+      <div class="card-body text-center">
+        <h5 class="card-title">Pagaie pour Kayak en Fibre</h5>
+        <p class="card-text">Légère et robuste pour vos aventures nautiques.</p>
+        <p class="text-success fw-bold">40 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Pagaie pour Kayak en Fibre', 40000, 'Images/Sport16.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 17 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport17.jpg" class="card-img-top" alt="Corde à Sauter Professionnelle">
+      <div class="card-body text-center">
+        <h5 class="card-title">Corde à Sauter Pro Fitness</h5>
+        <p class="card-text">Excellente pour le cardio et la perte de poids.</p>
+        <p class="text-success fw-bold">8 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Corde à Sauter Pro Fitness', 8000, 'Images/Sport17.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 18 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport18.jpg" class="card-img-top" alt="Planche de Surf">
+      <div class="card-body text-center">
+        <h5 class="card-title">Planche de Surf en Mousse</h5>
+        <p class="card-text">Parfaite pour débutants et intermédiaires.</p>
+        <p class="text-success fw-bold">110 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Planche de Surf en Mousse', 110000, 'Images/Sport18.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport19.jpg" class="card-img-top" alt="Rollers de Loisirs">
+      <div class="card-body text-center">
+        <h5 class="card-title">Rollers de Loisirs</h5>
+        <p class="card-text">Glissez avec style et confort sur toutes les surfaces.</p>
+        <p class="text-success fw-bold">40 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Rollers de Loisirs', 40000, 'Images/Sport19.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 20 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport20.jpg" class="card-img-top" alt="Vélo BMX Freestyle">
+      <div class="card-body text-center">
+        <h5 class="card-title">Vélo BMX Freestyle</h5>
+        <p class="card-text">Conçu pour figures acrobatiques et compétitions.</p>
+        <p class="text-success fw-bold">120 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Vélo BMX Freestyle', 120000, 'Images/Sport20.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Produit sport 21 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport21.jpg" class="card-img-top" alt="Skateboard Classique">
+      <div class="card-body text-center">
+        <h5 class="card-title">Skateboard Classique</h5>
+        <p class="card-text">Planche robuste pour figures et balades urbaines.</p>
+        <p class="text-success fw-bold">30 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Skateboard Classique', 30000, 'Images/Sport21.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit sport 22 -->
+<div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport22.jpg" class="card-img-top" alt="Sac de Sport">
+      <div class="card-body text-center">
+        <h5 class="card-title">Sac de Sport Multifonction</h5>
+        <p class="card-text">Grand espace pour transporter vos équipements avec style.</p>
+        <p class="text-success fw-bold">30 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Sac de Sport Multifonction', 30000, 'Images/Sport22.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 23 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport23.jpg" class="card-img-top" alt="Lunettes de Natation">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lunettes de Natation Anti-Buée</h5>
+        <p class="card-text">Vision claire et confort sous l'eau.</p>
+        <p class="text-success fw-bold">15 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lunettes de Natation Anti-Buée', 15000, 'Images/Sport23.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 24 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport24.jpg" class="card-img-top" alt="Protège-Tibias">
+      <div class="card-body text-center">
+        <h5 class="card-title">Protège-Tibias Football</h5>
+        <p class="card-text">Protection légère et ergonomique pour joueurs actifs.</p>
+        <p class="text-success fw-bold">10 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Protège-Tibias Football', 10000, 'Images/Sport24.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit sport 25 -->
+  <div class="col-md-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Sport25.jpg" class="card-img-top" alt="Bouteille de Sport">
+      <div class="card-body text-center">
+        <h5 class="card-title">Bouteille de Sport 750ml</h5>
+        <p class="card-text">Hydratez-vous efficacement pendant l'effort.</p>
+        <p class="text-success fw-bold">8 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Bouteille de Sport 750ml', 8000, 'Images/Sport25.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+
+      </div>
+    </div>
+
+    </section>
+
+  <!-- Footer simple -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+      <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Script panier -->
+  <script>
+    function ajouterAuPanier(nom, prix, image) {
+      let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+      const index = panier.findIndex(p => p.nom === nom);
+      if (index !== -1) {
+        panier[index].quantite += 1;
+      } else {
+        panier.push({ nom, prix, image, quantite: 1 });
+      }
+
+      localStorage.setItem("panier", JSON.stringify(panier));
+      alert(`${nom} ajouté au panier !`);
+    }
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="essaie.js"></script>    
+</body>
+</html>

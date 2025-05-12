@@ -1,0 +1,80 @@
+body {
+    font-family: 'Nunito', sans-serif;
+  }
+  .hero {
+    background: url(Images/Affichage.jpg) center/cover no-repeat;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+  .category-card {
+    transition: transform 0.3s ease;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .category-card:hover {
+    transform: scale(1.05);
+  }
+  .category-card img {
+    height: 200px;
+    object-fit: cover;
+  }
+  footer {
+    background-color: #222;
+    color: #ccc;
+    padding: 2rem 0;
+  }
+  /* style.css */
+
+/* Police personnalisée */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Titre de section */
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  /* Bouton personnalisé */
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-success:hover {
+    background-color: #218838;
+  }
+  
+  /* Cartes produits */
+  .card {
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Images des produits */
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  /* Navbar */
+  .navbar-brand span {
+    font-size: 1.8rem;
+  }
+  
+  /* Footer */
+  footer {
+    font-size: 0.95rem;
+  }
+  

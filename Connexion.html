@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - HyperMarket</title>
+    <link rel="stylesheet" href="stylei.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Styles de base */
+        :root {
+            --primary: #2e8b57;
+            --secondary: #343a40;
+            --accent: #ffc107;
+            --light: #f8f9fa;
+            --danger: #dc3545;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .split-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* Section Hero */
+        .hero-section {
+            flex: 1;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .hero-content {
+            max-width: 500px;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-hero {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        /* Section Connexion */
+        .login-section {
+            width: 450px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .login-container {
+            width: 100%;
+            max-width: 350px;
+        }
+        
+        .login-title {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .user-type {
+            display: flex;
+            margin-bottom: 1.5rem;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px #ddd;
+        }
+        
+        .user-type-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .user-type-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+        }
+        
+        .password-container {
+            position: relative;
+        }
+        
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #6c757d;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 8px;
+            accent-color: var(--primary);
+        }
+        
+        .forgot-password {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-login:hover {
+            background-color: #218838;
+        }
+        
+        #clientWelcome {
+            text-align: center;
+        }
+        
+        #loadingIndicator {
+            display: none;
+            text-align: center;
+            margin: 10px 0;
+            color: var(--primary);
+        }
+        
+        #errorMessage {
+            color: var(--danger);
+            text-align: center;
+            margin: 10px 0;
+            display: none;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+            }
+            
+            .hero-section {
+                padding: 2rem 1rem;
+                text-align: center;
+            }
+            
+            .login-section {
+                width: 100%;
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="split-container">
+        <!-- Section gauche - Hero -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">HyperMarket</h1>
+                <p class="hero-text">
+                    Votre hypermarché en ligne, où qualité et économie se rencontrent. 
+                    Découvrez nos milliers de produits à prix imbattables toute l'année.
+                </p>
+                <button class="btn-hero" id="createAccountBtn">Créer un compte</button>
+            </div>
+        </div>
+
+        <!-- Section droite - Connexion -->
+        <div class="login-section">
+            <div class="login-container">
+                <h1 class="login-title">Connexion</h1>
+                
+                <div class="user-type">
+                    <button class="user-type-btn active" id="clientBtn">Client</button>
+                    <button class="user-type-btn" id="adminBtn">Admin</button>
+                </div>
+                
+                <form id="loginForm" style="display: none;">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <div class="password-container">
+                            <input type="password" id="password" class="form-control" required>
+                            <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Rester connecté</label>
+                        </div>
+                        <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    </div>
+                    
+                    <div id="loadingIndicator">
+                        <i class="fas fa-spinner fa-spin"></i> Vérification en cours...
+                    </div>
+                    
+                    <div id="errorMessage"></div>
+                    
+                    <button type="submit" class="btn-login">Se connecter</button>
+                </form>
+                
+                <div id="clientWelcome">
+                    <p>Bienvenue cher client ! Accédez directement à notre catalogue.</p>
+                    <button class="btn-login" id="accessBtn">Accéder au site</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Éléments du DOM
+        const clientBtn = document.getElementById('clientBtn');
+        const adminBtn = document.getElementById('adminBtn');
+        const loginForm = document.getElementById('loginForm');
+        const clientWelcome = document.getElementById('clientWelcome');
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+        const createAccountBtn = document.getElementById('createAccountBtn');
+        const accessBtn = document.getElementById('accessBtn');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Gestion du type d'utilisateur
+        clientBtn.addEventListener('click', function() {
+            clientBtn.classList.add('active');
+            adminBtn.classList.remove('active');
+            loginForm.style.display = 'none';
+            clientWelcome.style.display = 'block';
+            errorMessage.style.display = 'none';
+        });
+
+        adminBtn.addEventListener('click', function() {
+            adminBtn.classList.add('active');
+            clientBtn.classList.remove('active');
+            loginForm.style.display = 'block';
+            clientWelcome.style.display = 'none';
+            errorMessage.style.display = 'none';
+        });
+
+        // Toggle password visibility
+        togglePassword.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Redirection création de compte
+        createAccountBtn.addEventListener('click', function() {
+            window.location.href = 'inscription.html';
+        });
+
+        // Accès client
+        accessBtn.addEventListener('click', function() {
+            window.location.href = 'accueil.html';
+        });
+
+        // Soumission formulaire admin
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            loadingIndicator.style.display = 'block';
+            errorMessage.style.display = 'none';
+            
+            // Simulation de vérification (à remplacer par un appel API en production)
+            setTimeout(() => {
+                if (email === 'oladossoubello@gmail.com' && password === 'Hypermarket12@') {
+                    // Redirection vers bord.html si identifiants corrects
+                    window.location.href = 'bord.html';
+                } else {
+                    errorMessage.textContent = 'Identifiants admin incorrects';
+                    errorMessage.style.display = 'block';
+                }
+                loadingIndicator.style.display = 'none';
+            }, 1000);
+        });
+
+        // Par défaut on montre le mode client
+        clientBtn.click();
+    </script>
+</body>
+</html>

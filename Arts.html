@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arts-Accessoires de Décoration- HyperMarket</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  <!-- Font Awesome (icônes) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-sVne8UgZ6q59fsKUof9/cEXE7X/8duWOK3RE29y3UXnJH1wxFg9YsnqN0zMdZOVF7Af2Yh2m2r3pp5U1kn4b8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Ton CSS personnalisé -->
+  <link rel="stylesheet" href="stylea.css" />
+  <script src="essaie.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="fw-bold text-success fs-25">HyperMarket</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="accueil.html">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Produits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="panier.html"> Panier <i class="fas fa-shopping-cart"></i>
+              <span class="badge bg-danger" id="panier-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Titre catégorie -->
+<section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-success mb-4 fw-bold">Nos Accessoires</h2>
+      <p class="text-center mb-5">Décorer votre maison votre style avec nos accessoires tendance.</p>
+      <div class="row g-4">
+
+        <!-- Produit Art 1 -->
+<div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Art1.jpg" class="card-img-top" alt="Tableau Abstrait">
+      <div class="card-body text-center">
+        <h5 class="card-title">Tableau Abstrait</h5>
+        <p class="card-text">Œuvre moderne aux couleurs vibrantes.</p>
+        <p class="text-success fw-bold">45 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Tableau Abstrait', 45000, 'Images/Art1.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Art 2 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Art2.jpg" class="card-img-top" alt="Sculpture Moderne">
+      <div class="card-body text-center">
+        <h5 class="card-title">Sculpture Moderne</h5>
+        <p class="card-text">Pièce unique en métal recyclé.</p>
+        <p class="text-success fw-bold">70 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Sculpture Moderne', 70000, 'Images/Art2.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Art 3 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Art3.jpg" class="card-img-top" alt="Vase Artistique">
+      <div class="card-body text-center">
+        <h5 class="card-title">Vase Artistique</h5>
+        <p class="card-text">Vase en céramique peint à la main.</p>
+        <p class="text-success fw-bold">30 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Vase Artistique', 30000, 'Images/Art3.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Art 4 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Art4.jpg" class="card-img-top" alt="Horloge Murale Design">
+      <div class="card-body text-center">
+        <h5 class="card-title">Horloge Murale Design</h5>
+        <p class="card-text">Horloge minimaliste en bois sculpté.</p>
+        <p class="text-success fw-bold">25 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Horloge Murale Design', 25000, 'Images/Art4.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Produit Art 5 -->
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="Images/Art5.jpg" class="card-img-top" alt="Lampe Artistique en Verre">
+      <div class="card-body text-center">
+        <h5 class="card-title">Lampe Artistique en Verre</h5>
+        <p class="card-text">Éclairage unique pour une ambiance chaleureuse.</p>
+        <p class="text-success fw-bold">40 000 FCFA</p>
+        <button class="btn btn-success" onclick="ajouterAuPanier('Lampe Artistique en Verre', 40000, 'Images/Art5.jpg')">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produit Art 6 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art6.jpg" class="card-img-top" alt="Tapis Traditionnel Tissé">
+    <div class="card-body text-center">
+      <h5 class="card-title">Tapis Traditionnel Tissé</h5>
+      <p class="card-text">Apportez une touche d'authenticité à votre intérieur.</p>
+      <p class="text-success fw-bold">25 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Tapis Traditionnel Tissé', 25000, 'Images/Art6.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 7 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art7.jpg" class="card-img-top" alt="Sculpture en Bois d'Ébène">
+    <div class="card-body text-center">
+      <h5 class="card-title">Sculpture en Bois d'Ébène</h5>
+      <p class="card-text">Œuvre artisanale élégante pour décorer vos espaces.</p>
+      <p class="text-success fw-bold">55 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Sculpture en Bois d\'Ébène', 55000, 'Images/Art7.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 8 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art8.jpg" class="card-img-top" alt="Bijoux en Perles Artisanales">
+    <div class="card-body text-center">
+      <h5 class="card-title">Bijoux en Perles Artisanales</h5>
+      <p class="card-text">Des bijoux uniques pour sublimer votre style.</p>
+      <p class="text-success fw-bold">18 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Bijoux en Perles Artisanales', 18000, 'Images/Art8.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 9 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art9.jpg" class="card-img-top" alt="Vase en Argile Peint à la Main">
+    <div class="card-body text-center">
+      <h5 class="card-title">Vase en Argile Peint à la Main</h5>
+      <p class="card-text">Ajoutez une touche artisanale à votre décoration.</p>
+      <p class="text-success fw-bold">22 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Vase en Argile Peint à la Main', 22000, 'Images/Art9.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 10 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art10.jpg" class="card-img-top" alt="Peinture Murale Africaine">
+    <div class="card-body text-center">
+      <h5 class="card-title">Peinture Murale Africaine</h5>
+      <p class="card-text">Capturant la beauté et l'esprit de l'Afrique.</p>
+      <p class="text-success fw-bold">60 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Peinture Murale Africaine', 60000, 'Images/Art10.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 11 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art11.jpg" class="card-img-top" alt="Masque Africain Sculpté">
+    <div class="card-body text-center">
+      <h5 class="card-title">Masque Africain Sculpté</h5>
+      <p class="card-text">Symbole de tradition et de spiritualité africaine.</p>
+      <p class="text-success fw-bold">35 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Masque Africain Sculpté', 35000, 'Images/Art11.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 12 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art12.jpg" class="card-img-top" alt="Panier en Osier Tressé">
+    <div class="card-body text-center">
+      <h5 class="card-title">Panier en Osier Tressé</h5>
+      <p class="card-text">Élégant et pratique pour vos courses ou votre déco.</p>
+      <p class="text-success fw-bold">15 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Panier en Osier Tressé', 15000, 'Images/Art12.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 13 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art13.jpg" class="card-img-top" alt="Chaise Artisanale en Bambou">
+    <div class="card-body text-center">
+      <h5 class="card-title">Chaise Artisanale en Bambou</h5>
+      <p class="card-text">Confort et style naturel pour vos espaces.</p>
+      <p class="text-success fw-bold">45 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Chaise Artisanale en Bambou', 45000, 'Images/Art13.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 14 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art14.jpg" class="card-img-top" alt="Tissu Wax Imprimé">
+    <div class="card-body text-center">
+      <h5 class="card-title">Tissu Wax Imprimé</h5>
+      <p class="card-text">Motifs vibrants pour créations vestimentaires uniques.</p>
+      <p class="text-success fw-bold">12 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Tissu Wax Imprimé', 12000, 'Images/Art14.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 15 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art15.jpg" class="card-img-top" alt="Buste en Bronze Finement Travaillé">
+    <div class="card-body text-center">
+      <h5 class="card-title">Buste en Bronze Finement Travaillé</h5>
+      <p class="card-text">Chef-d’œuvre pour les amateurs d’art africain.</p>
+      <p class="text-success fw-bold">90 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Buste en Bronze Finement Travaillé', 90000, 'Images/Art15.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 16 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art16.jpg" class="card-img-top" alt="Horloge Murale Artistique en Bois">
+    <div class="card-body text-center">
+      <h5 class="card-title">Horloge Murale Artistique en Bois</h5>
+      <p class="card-text">Mélange de fonctionnalité et d'artisanat.</p>
+      <p class="text-success fw-bold">28 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Horloge Murale Artistique en Bois', 28000, 'Images/Art16.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 17 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art17.jpg" class="card-img-top" alt="Statue de Femme Africaine en Résine">
+    <div class="card-body text-center">
+      <h5 class="card-title">Statue de Femme Africaine en Résine</h5>
+      <p class="card-text">Homage à la beauté et la force féminine.</p>
+      <p class="text-success fw-bold">38 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Statue de Femme Africaine en Résine', 38000, 'Images/Art17.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 18 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art18.jpg" class="card-img-top" alt="Bol en Bois Sculpte">
+    <div class="card-body text-center">
+      <h5 class="card-title">Bol en Bois Sculpté</h5>
+      <p class="card-text">Parfait pour vos fruits ou votre décoration de table.</p>
+      <p class="text-success fw-bold">17 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Bol en Bois Sculpté', 17000, 'Images/Art18.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 19 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art19.jpg" class="card-img-top" alt="Sac à Main en Raphia">
+    <div class="card-body text-center">
+      <h5 class="card-title">Sac à Main en Raphia</h5>
+      <p class="card-text">Élégance naturelle pour vos sorties.</p>
+      <p class="text-success fw-bold">20 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Sac à Main en Raphia', 20000, 'Images/Art19.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 20 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art20.jpg" class="card-img-top" alt="Collier de Perles Colorées">
+    <div class="card-body text-center">
+      <h5 class="card-title">Collier de Perles Colorées</h5>
+      <p class="card-text">Accessoire vibrant pour illuminer vos tenues.</p>
+      <p class="text-success fw-bold">10 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Collier de Perles Colorées', 10000, 'Images/Art20.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 21 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art21.jpg" class="card-img-top" alt="Porte-bouteille en Fer Forgé">
+    <div class="card-body text-center">
+      <h5 class="card-title">Porte-bouteille en Fer Forgé</h5>
+      <p class="card-text">Stockage stylé pour vos meilleures bouteilles.</p>
+      <p class="text-success fw-bold">12 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Porte-bouteille en Fer Forgé', 12000, 'Images/Art21.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 22 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art22.jpg" class="card-img-top" alt="Poupée Artisanale en Tissu">
+    <div class="card-body text-center">
+      <h5 class="card-title">Porte fleurs en fer</h5>
+      <p class="card-text">Traditionnel fait avec soin et amour.</p>
+      <p class="text-success fw-bold">8 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Poupée Artisanale en Tissu', 8000, 'Images/Art22.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 23 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art23.jpg" class="card-img-top" alt="Table Basse en Bois Massif">
+    <div class="card-body text-center">
+      <h5 class="card-title">Sculpture en Bois Massif</h5>
+      <p class="card-text">Solidité et élégance pour votre salon.</p>
+      <p class="text-success fw-bold">25 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Table Basse en Bois Massif', 25000, 'Images/Art23.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 24 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art24.jpg" class="card-img-top" alt="Chapeau de Plage en Paille">
+    <div class="card-body text-center">
+      <h5 class="card-title">Corbeille Décorative en Paille</h5>
+      <p class="card-text">Une touche artisanale.</p>
+      <p class="text-success fw-bold">13 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Chapeau de Plage en Paille', 13000, 'Images/Art24.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+<!-- Produit Art 25 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm">
+    <img src="Images/Art25.jpg" class="card-img-top" alt="Plat Traditionnel Sculpté">
+    <div class="card-body text-center">
+      <h5 class="card-title">Plat Traditionnel Sculpté</h5>
+      <p class="card-text">Beauté authentique pour vos présentations culinaires.</p>
+      <p class="text-success fw-bold">19 000 FCFA</p>
+      <button class="btn btn-success" onclick="ajouterAuPanier('Plat Traditionnel Sculpté', 19000, 'Images/Art25.jpg')">Ajouter au panier</button>
+    </div>
+  </div>
+</div>
+
+  
+  
+
+    </div>
+</div>
+</section>
+
+<!-- Footer simple -->
+<footer class="bg-dark text-white py-4 mt-5">
+<div class="container text-center">
+  <p>&copy; 2025 HyperMarket. Tous droits réservés.</p>
+</div>
+</footer>
+
+<!-- Script panier -->
+<script>
+function ajouterAuPanier(nom, prix, image) {
+  let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+  const index = panier.findIndex(p => p.nom === nom);
+  if (index !== -1) {
+    panier[index].quantite += 1;
+  } else {
+    panier.push({ nom, prix, image, quantite: 1 });
+  }
+
+  localStorage.setItem("panier", JSON.stringify(panier));
+  alert(`${nom} ajouté au panier !`);
+}
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="essaie.js"></script>    
+</body>
+</html>
+
